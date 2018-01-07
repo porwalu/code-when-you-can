@@ -16,8 +16,8 @@ public class CountEvenDigitNumbers {
 
 				return -1;
 			}
-			//if (Math.floor(Math.log10(nums[i])+1) % 2 == 0) {
-	        if((Integer.toString(nums[i])).length() % 2 == 0) {//Alternate solution
+			if (Math.floor(Math.log10(nums[i])+1) % 2 == 0) {//This gives better time result for fixed input
+	        //if((Integer.toString(nums[i])).length() % 2 == 0) {//Alternate solution
 
 				countEvenNum++;
 			}
