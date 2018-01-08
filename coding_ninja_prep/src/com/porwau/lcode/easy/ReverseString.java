@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class ReverseString {
 
 	static void reverseString(char[] s) {
+		//System.out.println(Arrays.toString(s)+ " is reversed to :");
 		System.out.println(Arrays.toString(s)+ " is reversed to :");
 
 		char tmp = ' ';
@@ -22,7 +23,8 @@ public class ReverseString {
 		char[] reverseThis = { 'h', 'e', 'l', 'l', 'o' };
 //		char[] reverseThis = null;
 		if (reverseThis != null) {//if we are passing null char arrays
-			reverseString(reverseThis);
+			//reverseString(reverseThis);//Use this 
+			reverseString(new char[] { 'h', 'e', 'l', 'l', 'o' });//Or this
 		} else {
 			System.out.println("Char array is null. Please re-enter");
 		}
