@@ -23,8 +23,8 @@ public class ReverseString {
 		char[] reverseThis = { 'h', 'e', 'l', 'l', 'o' };
 //		char[] reverseThis = null;
 		if (reverseThis != null) {//if we are passing null char arrays
-			//reverseString(reverseThis);//Use this 
-			reverseString(new char[] { 'h', 'e', 'l', 'l', 'o' });//Or this
+			reverseString(reverseThis);//Use this 
+			//reverseString(new char[] { 'h', 'e', 'l', 'l', 'o' });//Or this
 		} else {
 			System.out.println("Char array is null. Please re-enter");
 		}
