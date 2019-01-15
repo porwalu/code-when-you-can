@@ -5,7 +5,6 @@ public class ReverseStringFromStringInput {
 	private static void reverseString(String reverseThis) {
 
 		char[] strArr = reverseThis.toCharArray();
-		System.out.println("'" + reverseThis + "' is reversed to : ");
 
 		char tmp = ' ';
 		int arrLength = strArr.length;
@@ -14,13 +13,13 @@ public class ReverseStringFromStringInput {
 			strArr[i] = strArr[arrLength - 1 - i];
 			strArr[arrLength - 1 - i] = tmp;
 		}
-		System.out.println("'" + String.copyValueOf(strArr) + "'");
+		System.out.println("'" + reverseThis + "' is reversed to : '" + String.copyValueOf(strArr) + "'");
 		return;
 	}
 
 	public static void main(String[] args) {
 
-		String reverseThis = "hello there";
+		String reverseThis = "Hello! How are you ? ";
 		reverseString(reverseThis);
 	}
 
