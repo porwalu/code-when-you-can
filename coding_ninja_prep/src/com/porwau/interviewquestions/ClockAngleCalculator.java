@@ -21,3 +21,4 @@ public class ClockAngleCalculator {
 		System.out.println("Angle b/w the clock hands at " + time + " is " + Math.abs(findAngle(time)) + " degree.");
 	}
 }
+//Time  and Space complexity = O(1)
