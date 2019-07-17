@@ -11,7 +11,7 @@ import java.util.Set;
 
 public class ThirdMaximumNumber {
 	static int thirdMax(int[] arrNum) {
-		Set<Integer> maxSet = new HashSet<>();
+		Set<Integer> maxSet = new HashSet<>();//TO avoid duplicate addition to a set
 		for(int i = 0 ; i < arrNum.length; i++) {
 			maxSet.add(arrNum[i]);
 			if(maxSet.size() > 3) {
@@ -26,8 +26,6 @@ public class ThirdMaximumNumber {
 	}
 	public static void main(String[] args) {
 		int[] arrNum = {2, 2, 1};
-		System.out.println("Third Maximum number of " + Arrays.toString(arrNum) + " is - " + thirdMax(arrNum));
-		
+		System.out.println("Third Maximum number of " + Arrays.toString(arrNum) + " is - " + thirdMax(arrNum));	
 	}
-
 }
