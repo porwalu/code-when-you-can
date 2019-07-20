@@ -5,6 +5,10 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+//Use cases - Third Maximum number
+//in case of duplicates, consider it as a single entry
+//if there are less than three maxs, return maximum
+
 public class ThirdMaximumNumber {
 	static int thirdMax(int[] arrNum) {
 		Set<Integer> maxSet = new HashSet<>();
