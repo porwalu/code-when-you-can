@@ -6,7 +6,7 @@ public class LongestWordInString {
 
 		String sentence = "H@#! are";
 
-		if (sentence == null || sentence.length() == 0) {
+		if (sentence == null || sentence.length() == 0) {// Null and empty check for String
 			System.out.println("Invalid String");
 			return;
 		}
