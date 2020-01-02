@@ -23,6 +23,10 @@ public class FirstBadVersion {
 		return versionCount;
 	}
 
+	/**
+	 * @param versionCount - Version number which is detected as bad
+	 * @return - first bad version
+	 */
 	private static int findFirstBadLinear(int versionCount) {
 		int i = 0;
 		for (i = versionCount; i > 0; i--) {
@@ -33,6 +37,10 @@ public class FirstBadVersion {
 		return i + 1;
 	}
 
+	/**
+	 * @param versionCount - Version number which is detected as bad
+	 * @return - if the version is bad or not
+	 */
 	private static boolean isBadVersion(int versionCount) {
 		Map<Integer, Character> badMap = new HashMap<>();
 		badMap.put(1, 'G');
