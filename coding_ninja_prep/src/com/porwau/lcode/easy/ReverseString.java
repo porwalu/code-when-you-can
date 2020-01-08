@@ -4,18 +4,18 @@ import java.util.Arrays;
 
 public class ReverseString {
 
-	static void reverseString(char[] s) {
-		//System.out.println(Arrays.toString(s)+ " is reversed to :");
-		System.out.println(Arrays.toString(s)+ " is reversed to :");
+	static void reverseString(char[] str) {
+		//System.out.println(Arrays.toString(str)+ " is reversed to :");
+		System.out.println(Arrays.toString(str)+ " is reversed to :");
 
 		char tmp = ' ';
-		int arrLength = s.length;
+		int arrLength = str.length;
 		for (int i = 0; i < arrLength / 2; i++) {
-			tmp = s[i];
-			s[i] = s[arrLength - 1 - i];
-			s[arrLength - 1 - i] = tmp;
+			tmp = str[i];
+			str[i] = str[arrLength - 1 - i];
+			str[arrLength - 1 - i] = tmp;
 		}
-		System.out.println(Arrays.toString(s));
+		System.out.println(Arrays.toString(str));
 
 	}
 
