@@ -2,6 +2,11 @@ package com.porwau.lcode.easy;
 
 import java.util.Arrays;
 
+/**
+ * This method takes a character array and reverses them in place
+ * @author Utkarsh Porwal
+ *
+ */
 public class ReverseString {
 
 	/**
