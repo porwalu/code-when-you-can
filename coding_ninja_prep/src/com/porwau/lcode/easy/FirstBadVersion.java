@@ -1,5 +1,8 @@
 package com.porwau.lcode.easy;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 278. First Bad Version All the versions after the first bad versions are Bad.
  * We need to find first bad version GGGGGGBBBB Algo - Starting from the most
@@ -35,6 +38,15 @@ public class FirstBadVersion {
 
 	private static boolean isBadVersion(int versionCount) {
 		// TODO Auto-generated method stub
-		return false;
+		Map <Integer,Character> badMap = new HashMap<>();
+		badMap.put(1, 'G');
+		badMap.put(1, 'G');
+		badMap.put(1, 'G');
+		badMap.put(1, 'G');
+		badMap.put(1, 'G');
+		badMap.put(1, 'B');
+		badMap.put(1, 'B');
+		badMap.put(1, 'B');
+		return badMap.get(versionCount)=='B'?true:false;
 	}
 }
