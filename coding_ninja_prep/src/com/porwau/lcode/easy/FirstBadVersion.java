@@ -19,12 +19,27 @@ public class FirstBadVersion {
 
 	}
 
-	private static void findFirstBadLogarithimic(int versionCount) {
+	private static int findFirstBadLogarithimic(int versionCount) {
+		return versionCount;
 		
 	}
 
-	private static void findFirstBadLinear(int versionCount) {
-		
-	}
+	private static int findFirstBadLinear(int versionCount) {
+		int i = 0;
+		for(i = versionCount; i>0; i--) {
+            if(!isBadVersion(versionCount)){
+            	break;              
+            }
+        }
+        return i+1;
 
+			
+		}
+
+private static boolean isBadVersion(int versionCount) {
+	// TODO Auto-generated method stub
+	return false;
 }
+}
+
+
