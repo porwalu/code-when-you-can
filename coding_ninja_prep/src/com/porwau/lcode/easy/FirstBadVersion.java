@@ -13,11 +13,17 @@ public class FirstBadVersion {
 
 	public static void main(String[] args) {
 		int versionCount = 5;
-		findFirstBad(versionCount);
+		findFirstBadLinear(versionCount);
+		findFirstBadLogarithimic(versionCount);
+
 
 	}
 
-	private static void findFirstBad(int versionCount) {
+	private static void findFirstBadLogarithimic(int versionCount) {
+		
+	}
+
+	private static void findFirstBadLinear(int versionCount) {
 		
 	}
 
