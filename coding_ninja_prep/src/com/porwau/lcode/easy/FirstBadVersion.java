@@ -17,12 +17,10 @@ public class FirstBadVersion {
 		int versionCount = 6;
 		System.out.println("First Bad version is " + findFirstBadLinear(versionCount));
 		findFirstBadLogarithimic(versionCount);
-
 	}
 
 	private static int findFirstBadLogarithimic(int versionCount) {
 		return versionCount;
-
 	}
 
 	private static int findFirstBadLinear(int versionCount) {
@@ -33,15 +31,14 @@ public class FirstBadVersion {
 			}
 		}
 		return i + 1;
-
 	}
 
 	private static boolean isBadVersion(int versionCount) {
 		Map<Integer, Character> badMap = new HashMap<>();
 		badMap.put(1, 'G');
 		badMap.put(2, 'G');
-		badMap.put(3, 'G');
-		badMap.put(4, 'G');
+		badMap.put(3, 'B');
+		badMap.put(4, 'B');
 		badMap.put(5, 'B');
 		badMap.put(6, 'B');
 		badMap.put(7, 'B');
