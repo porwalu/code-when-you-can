@@ -14,8 +14,8 @@ import java.util.Map;
 public class FirstBadVersion {
 
 	public static void main(String[] args) {
-		int versionCount = 5;
-		findFirstBadLinear(versionCount);
+		int versionCount = 6;
+		System.out.println("First Bad version is "+findFirstBadLinear(versionCount));
 		findFirstBadLogarithimic(versionCount);
 
 	}
@@ -28,7 +28,7 @@ public class FirstBadVersion {
 	private static int findFirstBadLinear(int versionCount) {
 		int i = 0;
 		for (i = versionCount; i > 0; i--) {
-			if (!isBadVersion(versionCount)) {
+			if (!isBadVersion(i)) {
 				break;
 			}
 		}
@@ -37,16 +37,15 @@ public class FirstBadVersion {
 	}
 
 	private static boolean isBadVersion(int versionCount) {
-		// TODO Auto-generated method stub
 		Map <Integer,Character> badMap = new HashMap<>();
 		badMap.put(1, 'G');
-		badMap.put(1, 'G');
-		badMap.put(1, 'G');
-		badMap.put(1, 'G');
-		badMap.put(1, 'G');
-		badMap.put(1, 'B');
-		badMap.put(1, 'B');
-		badMap.put(1, 'B');
+		badMap.put(2, 'G');
+		badMap.put(3, 'G');
+		badMap.put(4, 'G');
+		badMap.put(5, 'B');
+		badMap.put(6, 'B');
+		badMap.put(7, 'B');
+		badMap.put(8, 'B');
 		return badMap.get(versionCount)=='B'?true:false;
 	}
 }
