@@ -5,6 +5,7 @@ package com.porwau.lcode.easy;
  * All the versions after the first bad versions are Bad.
  * We need to find first bad version
  * GGGGGGBBBB
+ * Algo - Starting from the most recent version - find the version GB combination.
  * @author Utkarsh Porwal
  *
  */
