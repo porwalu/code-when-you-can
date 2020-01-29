@@ -2,7 +2,8 @@ package com.porwau.lcode.easy;
 
 /**
  * 278. First Bad Version
- * 
+ * All the versions after the first bad versions are Bad.
+ * We need to find first bad version
  * GGGGGGBBBB
  * @author Utkarsh Porwal
  *
