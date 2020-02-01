@@ -30,7 +30,6 @@ public class ATOI {
 			if (str.equals("")) {
 				return 0;
 			}
-
 			if (str.length() >= 11) {
 				return m.group(2).equals("-") ? Integer.MIN_VALUE : Integer.MAX_VALUE;//long strings which cant fit in float
 			}
@@ -45,16 +44,13 @@ public class ATOI {
 		} else {
 			atoi = 0;
 		}
-
 		return (int) atoi * sign;
 	}
 
 	public static void main(String[] args) {
 		String pattern = "^(\\s*)([\\-\\+]*)([0-9]+)(.*)"; // 0 or more spaces, followed by 1 0r more numbers, followed
-															// by
-		// anything.
+															// by anything.
 		String convertToInteger = " 00000-42a1234";
 		System.out.println("ATOI for " + convertToInteger + " is " + defAtoi(convertToInteger, pattern));
 	}
-
 }
