@@ -23,16 +23,16 @@ public class ATOI {
 		int sign = 1;
 		if (m.matches()) {
 			if (m.group(2).equals("+-") || m.group(2).equals("-+") || m.group(2).equals("--")
-					|| m.group(2).equals("++")) {
+					|| m.group(2).equals("++")) {//invaid signs
 				return 0;
 			}
-			String str = m.group(3).replaceAll("^0+", "");
+			String str = m.group(3).replaceAll("^0+", "");//000001231311 type numbers
 			if (str.equals("")) {
 				return 0;
 			}
 
 			if (str.length() >= 11) {
-				return m.group(2).equals("-") ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+				return m.group(2).equals("-") ? Integer.MIN_VALUE : Integer.MAX_VALUE;//long strings which cant fit in float
 			}
 			atoi = Long.parseLong(str);
 			sign = m.group(2).equals("-") ? -1 : 1;
