@@ -8,8 +8,8 @@ import java.util.regex.Pattern;
  * non whitespace should be integers. 3. For invalid input or If no valid
  * conversion could be performed, a zero value is returned. Only the first
  * integral part is considered. eg. for 42SDs32 - return 42 and not 32 Algo a)
- * Check for valid inputs b) grab only valid first integer and return.
- * it can have positive or negative values too.
+ * Check for valid inputs b) grab only valid first integer and return. it can
+ * have positive or negative values too.
  * 
  * @author Utkarsh Porwal
  *
@@ -20,30 +20,41 @@ public class ATOI {
 		Pattern p = Pattern.compile(pattern);
 		Matcher m = p.matcher(convertToInteger);
 		long atoi;
-		int sign=1;
+		int sign = 1;
 		if (m.matches()) {
-			if(m.group(2).equals("+-") || m.group(2).equals("-+")|| m.group(2).equals("--")|| m.group(2).equals("++")) {return 0;}
-            String str = m.group(3).replaceAll("^0+","");
-            			if(str.equals("")) {return 0;}
+			if (m.group(2).equals("+-") || m.group(2).equals("-+") || m.group(2).equals("--")
+					|| m.group(2).equals("++")) {
+				return 0;
+			}
+			String str = m.group(3).replaceAll("^0+", "");
+			if (str.equals("")) {
+				return 0;
+			}
 
-			if(str.length()>=11) {return m.group(2).equals("-")?Integer.MIN_VALUE:Integer.MAX_VALUE;}
+			if (str.length() >= 11) {
+				return m.group(2).equals("-") ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+			}
 			atoi = Long.parseLong(str);
 			sign = m.group(2).equals("-") ? -1 : 1;
-			if(atoi*sign < Integer.MIN_VALUE) {atoi=Integer.MIN_VALUE;}
-			else if(atoi*sign > Integer.MAX_VALUE) {atoi = Integer.MAX_VALUE;}
+			if (atoi * sign < Integer.MIN_VALUE) {
+				atoi = Integer.MIN_VALUE;
+			} else if (atoi * sign > Integer.MAX_VALUE) {
+				atoi = Integer.MAX_VALUE;
+			}
 
-		}else {
+		} else {
 			atoi = 0;
 		}
 
-		return (int)atoi*sign;
+		return (int) atoi * sign;
 	}
 
 	public static void main(String[] args) {
-		String pattern = "^(\\s*)([\\-\\+]*)([0-9]+)(.*)"; // 0 or more spaces, followed by 1 0r more numbers, followed by
-												// anything.
+		String pattern = "^(\\s*)([\\-\\+]*)([0-9]+)(.*)"; // 0 or more spaces, followed by 1 0r more numbers, followed
+															// by
+		// anything.
 		String convertToInteger = " 00000-42a1234";
-		System.out.println("ATOI for " + convertToInteger + " is " + defAtoi(convertToInteger,pattern));
+		System.out.println("ATOI for " + convertToInteger + " is " + defAtoi(convertToInteger, pattern));
 	}
 
 }
