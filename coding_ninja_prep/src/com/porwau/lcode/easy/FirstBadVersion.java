@@ -38,10 +38,10 @@ public class FirstBadVersion {
 	}
 
 	/**
-	 * @param versionCount - Version number which is detected as bad
+	 * @param version - To check if this version is bad
 	 * @return - if the version is bad or not
 	 */
-	private static boolean isBadVersion(int versionCount) {
+	private static boolean isBadVersion(int version) {
 		Map<Integer, Character> badMap = new HashMap<>();
 		badMap.put(1, 'G');
 		badMap.put(2, 'G');
@@ -51,6 +51,6 @@ public class FirstBadVersion {
 		badMap.put(6, 'B');
 		badMap.put(7, 'B');
 		badMap.put(8, 'B');
-		return badMap.get(versionCount) == 'B' ? true : false;
+		return badMap.get(version) == 'B' ? true : false;
 	}
 }
