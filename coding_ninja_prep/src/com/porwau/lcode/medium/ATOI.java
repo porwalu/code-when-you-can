@@ -24,7 +24,7 @@ public class ATOI {
 		if (m.matches()) {
 			System.out.println("Group 3 " + m.group(3));
 
-			if(m.group(2).equals("+-") && m.group(2).equals("-+")) {return 0;}
+			if(m.group(2).equals("+-") || m.group(2).equals("-+")) {return 0;}
 			if(m.group(3).length()>=11) {return m.group(2).equals("-")?Integer.MIN_VALUE:Integer.MAX_VALUE;}
 			atoi = Long.parseLong(m.group(3));
 			sign = m.group(2).equals("-") ? -1 : 1;
