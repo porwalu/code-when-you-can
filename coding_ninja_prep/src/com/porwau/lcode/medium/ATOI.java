@@ -23,15 +23,14 @@ public class ATOI {
 		int sign=1;
 		if (m.matches()) {
 			System.out.println("Group 3 " + m.group(3));
-			if(!m.group(2).equals("+-") && !m.group(2).equals("-+")) {
+
+			if(m.group(2).equals("+-") && m.group(2).equals("-+")) {return 0;}
+			if(m.group(3).length()>=11) {return m.group(2).equals("-")?Integer.MIN_VALUE:Integer.MAX_VALUE;}
 			atoi = Long.parseLong(m.group(3));
 			sign = m.group(2).equals("-") ? -1 : 1;
 			if(atoi*sign < Integer.MIN_VALUE) {atoi=Integer.MIN_VALUE;}
 			else if(atoi*sign > Integer.MAX_VALUE) {atoi = Integer.MAX_VALUE;}
-			}else {
-				System.out.println("No Match found");
-				atoi = 0;
-			}
+
 		}else {
 			System.out.println("No Match found");
 			atoi = 0;
@@ -43,7 +42,7 @@ public class ATOI {
 	public static void main(String[] args) {
 		String pattern = "^(\\s*)([\\-\\+]*)([0-9]+)(.*)"; // 0 or more spaces, followed by 1 0r more numbers, followed by
 												// anything.
-		String convertToInteger = " -+42";
+		String convertToInteger = "-20000000000000000000";
 		System.out.println("ATOI for " + convertToInteger + " is " + defAtoi(convertToInteger,pattern));
 	}
 
