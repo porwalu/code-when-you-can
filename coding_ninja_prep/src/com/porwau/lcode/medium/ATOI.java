@@ -23,8 +23,8 @@ public class ATOI {
 		int sign=1;
 		if (m.matches()) {
 			System.out.println("Group 3 " + m.group(3));
-			if(m.group(3).equals("+-")||m.group(3).equals("+-")) {
-			atoi = Long.parseLong(m.group(4));
+			if(!m.group(2).equals("+-") && !m.group(2).equals("-+")) {
+			atoi = Long.parseLong(m.group(3));
 			sign = m.group(2).equals("-") ? -1 : 1;
 			if(atoi*sign < Integer.MIN_VALUE) {atoi=Integer.MIN_VALUE;}
 			else if(atoi*sign > Integer.MAX_VALUE) {atoi = Integer.MAX_VALUE;}
@@ -41,9 +41,9 @@ public class ATOI {
 	}
 
 	public static void main(String[] args) {
-		String pattern = "^(\\s*)((\\-|\\+)*)([0-9]+)(.*)"; // 0 or more spaces, followed by 1 0r more numbers, followed by
+		String pattern = "^(\\s*)([\\-\\+]*)([0-9]+)(.*)"; // 0 or more spaces, followed by 1 0r more numbers, followed by
 												// anything.
-		String convertToInteger = "-+191283472123";
+		String convertToInteger = " -+42";
 		System.out.println("ATOI for " + convertToInteger + " is " + defAtoi(convertToInteger,pattern));
 	}
 
