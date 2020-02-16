@@ -3,7 +3,7 @@ package com.porwau.lcode.easy;
 public class SqaureRoot {
 
 	public static void main(String[] args) {
-		int number = 8;
+		int number = 2147395599;
 		System.out.println("Square root of " + number + " is " + sqrt(number));
 	}
 
@@ -14,14 +14,14 @@ public class SqaureRoot {
 		while (left <=right) {
 			 mid = left + (right - left) / 2;// square too wont be more than this.
 
-			if (mid * mid > number) {
+			if ((long)mid * mid > number) {
 				right = mid -1;
-			} else if (mid * mid < number) {
+			} else if ((long)mid * mid < number) {
 				// root is to the right of mid
 				left = mid + 1;
 			}else {return mid;}
 		}
-		return right;
+		return right;//remember this
 	}
 
 }
