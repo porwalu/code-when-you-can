@@ -1,4 +1,4 @@
-package com.porwau.interviewquestions;
+package com.porwau.problemsolving;
 
 import java.util.Arrays;
 
