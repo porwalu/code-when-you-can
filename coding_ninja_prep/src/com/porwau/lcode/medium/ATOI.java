@@ -19,24 +19,27 @@ public class ATOI {
 	private static int defAtoi(String convertToInteger, String pattern) {
 		Pattern p = Pattern.compile(pattern);
 		Matcher m = p.matcher(convertToInteger);
-		String atoi = null;
+		//String atoi = null;
+		long atoi;
 		int sign=1;
 		if (m.matches()) {
-			System.out.println("Group 2 " + m.group(3));
-			atoi = m.group(3);
+			System.out.println("Group 3 " + m.group(3));
+			atoi = Long.parseLong(m.group(3));
 			sign = m.group(2).equals("-") ? -1 : 1;
+			if(atoi*sign < Integer.MIN_VALUE) {atoi=Integer.MIN_VALUE;}
+			else if(atoi*sign > Integer.MAX_VALUE) {atoi = Integer.MAX_VALUE;}
 		}else {
 			System.out.println("No Match found");
-			atoi = "0";
+			atoi = 0;
 		}
 
-		return Integer.parseInt(atoi)*sign;
+		return (int)atoi*sign;
 	}
 
 	public static void main(String[] args) {
 		String pattern = "^(\\s*)([\\-\\+]*)([0-9]+)(.*)"; // 0 or more spaces, followed by 1 0r more numbers, followed by
 												// anything.
-		String convertToInteger = "   +42";
+		String convertToInteger = "-191283472123";
 		System.out.println("ATOI for " + convertToInteger + " is " + defAtoi(convertToInteger,pattern));
 	}
 
