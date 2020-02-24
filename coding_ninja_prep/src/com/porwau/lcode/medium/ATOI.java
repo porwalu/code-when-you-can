@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
  * conversion could be performed, a zero value is returned. Only the first
  * integral part is considered. eg. for 42SDs32 - return 42 and not 32 Algo a)
  * Check for valid inputs b) grab only valid first integer and return.
+ * it can have positive or negative values too.
  * 
  * @author Utkarsh Porwal
  *
@@ -23,8 +24,7 @@ public class ATOI {
 		if (m.matches()) {
 			System.out.println("Group 2 " + m.group(3));
 			atoi = m.group(3);
-			String s= m.group(2);
-			sign = s.equals("-") ? -1 : 1;
+			sign = m.group(2).equals("-") ? -1 : 1;
 		}else {
 			System.out.println("No Match found");
 			atoi = "0";
@@ -36,7 +36,7 @@ public class ATOI {
 	public static void main(String[] args) {
 		String pattern = "^(\\s*)([\\-\\+]*)([0-9]+)(.*)"; // 0 or more spaces, followed by 1 0r more numbers, followed by
 												// anything.
-		String convertToInteger = "   -42";
+		String convertToInteger = "   +42";
 		System.out.println("ATOI for " + convertToInteger + " is " + defAtoi(convertToInteger,pattern));
 	}
 
