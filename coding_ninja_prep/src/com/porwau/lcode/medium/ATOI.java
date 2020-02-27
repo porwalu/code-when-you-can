@@ -18,13 +18,16 @@ public class ATOI {
 	private static int defAtoi(String convertToInteger, String pattern) {
 		Pattern p = Pattern.compile(pattern);
 		Matcher m = p.matcher(convertToInteger);
+		String atoi = null;
 		if (m.matches()) {
 			System.out.println("Group 2 " + m.group(2));
+			atoi = m.group(2);
 		}else {
 			System.out.println("No Match found");
+			atoi = "0";
 		}
 
-		return 1;
+		return Integer.parseInt(atoi);
 	}
 
 	public static void main(String[] args) {
