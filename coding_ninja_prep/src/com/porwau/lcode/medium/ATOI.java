@@ -15,9 +15,9 @@ import java.util.regex.Pattern;
  */
 public class ATOI {
 
-	private static int defAtoi(String test, String pattern) {
+	private static int defAtoi(String convertToInteger, String pattern) {
 		Pattern p = Pattern.compile(pattern);
-		Matcher m = p.matcher(test);
+		Matcher m = p.matcher(convertToInteger);
 		if (m.matches()) {
 			System.out.println("Group 2 " + m.group(2));
 		}else {
@@ -30,8 +30,8 @@ public class ATOI {
 	public static void main(String[] args) {
 		String pattern = "^(\\s*)([0-9]+)(.*)"; // 0 or more spaces, followed by 1 0r more numbers, followed by
 												// anything.
-		String test = " 12d";
-		System.out.println("ATOI for " + test + " is " + defAtoi(test,pattern));
+		String convertToInteger = " 12d";
+		System.out.println("ATOI for " + convertToInteger + " is " + defAtoi(convertToInteger,pattern));
 	}
 
 }
