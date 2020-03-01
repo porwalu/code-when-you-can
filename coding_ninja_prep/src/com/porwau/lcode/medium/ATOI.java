@@ -15,14 +15,7 @@ import java.util.regex.Pattern;
  */
 public class ATOI {
 
-	final static int defAtoi() {
-		return 1;
-	}
-
-	public static void main(String[] args) {
-		String pattern = "^(\\s*)([0-9]+)(.*)"; // 0 or more spaces, followed by 1 0r more numbers, followed by
-												// anything.
-		String test = " 12d";
+	private static int defAtoi(String test, String pattern) {
 		Pattern p = Pattern.compile(pattern);
 		Matcher m = p.matcher(test);
 		if (m.matches()) {
@@ -31,6 +24,14 @@ public class ATOI {
 			System.out.println("No Match found");
 		}
 
+		return 1;
+	}
+
+	public static void main(String[] args) {
+		String pattern = "^(\\s*)([0-9]+)(.*)"; // 0 or more spaces, followed by 1 0r more numbers, followed by
+												// anything.
+		String test = " 12d";
+		System.out.println("ATOI for " + test + " is " + defAtoi(test,pattern));
 	}
 
 }
