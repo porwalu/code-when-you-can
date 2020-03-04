@@ -26,7 +26,9 @@ public class ATOI {
 		Pattern p = Pattern.compile(pattern);
 		Matcher m = p.matcher(test);
 		if (m.matches()) {
-			System.out.println("Group 0 " + m.group(3));
+			System.out.println("Group 2 " + m.group(2));
+		}else {
+			System.out.println("No Match found");
 		}
 
 	}
