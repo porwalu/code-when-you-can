@@ -22,20 +22,16 @@ public class ATOI {
 		return 1;
 	}
 	public static void main(String[] args) {
+		String pattern = "^(\\s*)([0-9]+)(.*)"; //0 or more spaces, followed by 1 0r more numbers, followed by anything.
 		String test = " ad12d";
-		String test1 = "123adsdadad";
 
-		Pattern p = Pattern.compile("[0-9]");
-		Matcher m = p.matcher("test1");
-		System.out.println("Using matcher find gives " + m.find() + " while matches gives - " + m.matches());
         if(Pattern.matches("^\\s*[0-9]+.*",test)) {
         	System.out.println("valid");
         }else {
         	System.out.println("Invalid");
         }
-		//test = test.replaceAll("[^\\+\\-0-9]", "");
 		System.out.println(test);
-		//System.out.println(Integer.parseInt(test));
+
 	}
 
 }
