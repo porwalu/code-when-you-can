@@ -1,7 +1,7 @@
 package com.porwau.lcode.easy;
-
-// Example of Fibonacci series - 0, 1, 1, 2, 3, 5, 8, 13, 21, 34,
-/**
+/**This class calculates the nth term of Fibonacci series
+ * Example of Fibonacci series - 0, 1, 1, 2, 3, 5, 8, 13, 21, 34...
+ * T(N)=T(N-1)+T(N-2)
  * @author Utkarsh Porwal
  *
  */
