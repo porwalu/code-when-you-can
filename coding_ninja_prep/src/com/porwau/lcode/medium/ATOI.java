@@ -1,5 +1,6 @@
 package com.porwau.lcode.medium;
 
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -11,7 +12,7 @@ import java.util.regex.Pattern;
  * Only the first integral part is considered. eg. for 42SDs32 - return 42 and not 32
  * Algo 
  * a) Check for valid inputs
- * b) grab only valid integer and return.
+ * b) grab only valid first integer and return.
  * @author Utkarsh Porwal
  *
  */
@@ -22,6 +23,11 @@ public class ATOI {
 	}
 	public static void main(String[] args) {
 		String test = " ad12d";
+		String test1 = "123adsdadad";
+
+		Pattern p = Pattern.compile("[0-9]");
+		Matcher m = p.matcher("test1");
+		System.out.println("Using matcher find gives " + m.find() + " while matches gives - " + m.matches());
         if(Pattern.matches("^\\s*[0-9]+.*",test)) {
         	System.out.println("valid");
         }else {
