@@ -9,6 +9,9 @@ import java.util.regex.Pattern;
  * 2.the first non whitespace should be integers.
  * 3. For invalid input or If no valid conversion could be performed, a zero value is returned.
  * Only the first integral part is considered. eg. for 42SDs32 - return 42 and not 32
+ * Algo 
+ * a) Check for valid inputs
+ * b) grab only valid integer and return.
  * @author Utkarsh Porwal
  *
  */
