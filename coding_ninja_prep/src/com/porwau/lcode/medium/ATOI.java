@@ -4,6 +4,11 @@ import java.util.regex.Pattern;
 
 /**
  * ATOI stands for ASCII to Integer
+ * Rules -
+ * 1. Discards whitespaces.
+ * 2.the first non whitespace should be integers.
+ * 3. For invalid input or If no valid conversion could be performed, a zero value is returned.
+ * Only the first integral part is considered. eg. for 42SDs32 - return 42 and not 32
  * @author Utkarsh Porwal
  *
  */
