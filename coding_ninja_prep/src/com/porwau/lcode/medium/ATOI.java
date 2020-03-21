@@ -2,6 +2,11 @@ package com.porwau.lcode.medium;
 
 import java.util.regex.Pattern;
 
+/**
+ * ATOI stands for ASCII to Integer
+ * @author Utkarsh Porwal
+ *
+ */
 public class ATOI {
 
 	final static int defAtoi() {
