@@ -26,6 +26,22 @@ public class DivideWithoutOperators {
 	}
 
 	private static int fasterdividebit(int dividend, int divisor) {
+		
+		if (dividend == 0 || divisor == 1) {
+			return dividend;
+		}
+
+		if (dividend == Integer.MIN_VALUE && divisor == -1) {
+			return Integer.MAX_VALUE;
+		}
+		int sign = dividend < 0 ^ divisor < 0 ? -1 : 1;
+		if (dividend > 0) {
+			dividend = -dividend;
+		}
+		if (divisor > 0) {
+			divisor = -divisor;// converting to negative as negative have more range
+		}
+
 		return 1;
 	}
 
