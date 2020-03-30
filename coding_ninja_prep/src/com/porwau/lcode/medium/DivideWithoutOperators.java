@@ -23,7 +23,6 @@ public class DivideWithoutOperators {
 		System.out.println("Quotient of division is " + fasterdivide(dividend, divisor));
 		System.out.println("Quotient of division is " + fasterdividebit(dividend, divisor));
 
-
 	}
 
 	private static int fasterdividebit(int dividend, int divisor) {
