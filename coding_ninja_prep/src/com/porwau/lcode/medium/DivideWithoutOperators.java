@@ -26,9 +26,8 @@ public class DivideWithoutOperators {
 
 	}
 
-	private static String fasterdividebit(int dividend, int divisor) {
-		// TODO Auto-generated method stub
-		return null;
+	private static int fasterdividebit(int dividend, int divisor) {
+		return 1;
 	}
 
 	private static int fasterdivide(int dividend, int divisor) {
