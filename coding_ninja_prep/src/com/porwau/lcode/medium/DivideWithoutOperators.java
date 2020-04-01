@@ -21,7 +21,14 @@ public class DivideWithoutOperators {
 		System.out.println("Quotient of division is " + divide(dividend, divisor));
 		System.out.println("Quotient of division is " + fastdivide(dividend, divisor));
 		System.out.println("Quotient of division is " + fasterdivide(dividend, divisor));
+		System.out.println("Quotient of division is " + fasterdividebit(dividend, divisor));
 
+
+	}
+
+	private static String fasterdividebit(int dividend, int divisor) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	private static int fasterdivide(int dividend, int divisor) {
@@ -46,23 +53,23 @@ public class DivideWithoutOperators {
 		int quotient = 0;
 		int value = divisor;
 		int doubleCount = 1;
-		while(divisor >= dividend) {
+		while (divisor >= dividend) {
 			doubles.add(doubleCount);
 			lookup.add(divisor);
-	        if (divisor < HALF_INT_MIN) {
-	            break;
-	        }
-	        divisor += divisor;// 26,52
+			if (divisor < HALF_INT_MIN) {
+				break;
+			}
+			divisor += divisor;// 26,52
 			doubleCount += doubleCount;// 2,4
 		}
 		int i;
-			for (i = lookup.size()-1;  i >=0; i--) {
-				if(lookup.get(i)>=dividend){
-					quotient += doubles.get(i);
-					dividend -= lookup.get(i); // 60-52		
-				}
+		for (i = lookup.size() - 1; i >= 0; i--) {
+			if (lookup.get(i) >= dividend) {
+				quotient += doubles.get(i);
+				dividend -= lookup.get(i); // 60-52
 			}
-		return sign == -1 ? -quotient:quotient;
+		}
+		return sign == -1 ? -quotient : quotient;
 	}
 
 	private static int fastdivide(int dividend, int divisor) {
