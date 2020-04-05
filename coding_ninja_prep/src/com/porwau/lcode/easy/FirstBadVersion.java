@@ -21,8 +21,7 @@ public class FirstBadVersion {
 
 	/**
 	 * @param versionCount -Version number which is detected as bad
-	 * @return -first bad version
-	 * This will have O(logn) complexity 
+	 * @return -first bad version This will have O(logn) complexity
 	 */
 	private static int findFirstBadLogarithimic(int versionCount) {
 		return versionCount;
@@ -30,8 +29,7 @@ public class FirstBadVersion {
 
 	/**
 	 * @param versionCount - Version number which is detected as bad
-	 * @return - first bad version
-	 * This will have O(n) complexity
+	 * @return - first bad version This will have O(n) complexity
 	 */
 	private static int findFirstBadLinear(int versionCount) {
 		int i = 0;
