@@ -25,12 +25,14 @@ public class FirstBadVersion {
 	 */
 	private static int findFirstBadLogarithimic(int versionCount) {
 		int mid = versionCount/2;
+		while(mid !=0) {
 		if(isBadVersion(mid)) {
 			//find mid to the left
+			mid /=2;
 		}else {
-			//find mid to the right
+			mid = (mid+versionCount)/2;
 		}
-		
+		}
 		return 1;
 	}
 
