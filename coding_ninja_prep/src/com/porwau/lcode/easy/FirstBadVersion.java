@@ -24,7 +24,9 @@ public class FirstBadVersion {
 	 * @return -first bad version This will have O(logn) complexity
 	 */
 	private static int findFirstBadLogarithimic(int versionCount) {
-		return versionCount;
+		int mid = versionCount/2;
+		
+		return 1;
 	}
 
 	/**
