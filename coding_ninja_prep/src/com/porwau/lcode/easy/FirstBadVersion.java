@@ -24,14 +24,18 @@ public class FirstBadVersion {
 	 * @return -first bad version This will have O(logn) complexity
 	 */
 	private static int findFirstBadLogarithimic(int versionCount) {
-		int mid = versionCount/2;
-		while(mid !=0) {
-		if(isBadVersion(mid)) {
-			//find mid to the left
-			mid /=2;
-		}else {
-			mid = (mid+versionCount)/2;
-		}
+		int mid = versionCount / 2;
+		while (mid != 0) {
+			if (isBadVersion(mid)) {
+				// find mid to the left
+				mid /= 2;
+			} else {
+				if (isBadVersion(mid + 1)) {
+					return mid + 1;
+				} else {
+					mid = (mid + 1 + versionCount) / 2;
+				}
+			}
 		}
 		return 1;
 	}
