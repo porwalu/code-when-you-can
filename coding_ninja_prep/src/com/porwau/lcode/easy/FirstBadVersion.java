@@ -19,6 +19,11 @@ public class FirstBadVersion {
 		findFirstBadLogarithimic(versionCount);
 	}
 
+	/**
+	 * @param versionCount -Version number which is detected as bad
+	 * @return -first bad version
+	 * This will have O(logn) complexity 
+	 */
 	private static int findFirstBadLogarithimic(int versionCount) {
 		return versionCount;
 	}
