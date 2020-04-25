@@ -15,8 +15,8 @@ public class FirstBadVersion {
 
 	public static void main(String[] args) {
 		int versionCount = 6;
-		System.out.println("First Bad version is " + findFirstBadLinear(versionCount));
-		findFirstBadLogarithimic(versionCount);
+		System.out.println("First Bad version via linear search is " + findFirstBadLinear(versionCount));
+		System.out.println("First Bad version via binary search is " + findFirstBadLogarithimic(versionCount));
 	}
 
 	/**
