@@ -12,10 +12,11 @@ import java.util.Map;
  *
  */
 public class DivideWithoutOperators {
+	private static int HALF_INT_MIN = -1073741824;// -2**30;
 
 	public static void main(String[] args) {
-		int dividend = 1100540749;
-		int divisor = -1090366779;
+		int dividend = 21;
+		int divisor = 2;
 
 		System.out.println("Quotient of division is " + divide(dividend, divisor));
 		System.out.println("Quotient of division is " + fastdivide(dividend, divisor));
@@ -31,8 +32,8 @@ public class DivideWithoutOperators {
 		if (dividend == Integer.MIN_VALUE && divisor == -1) {
 			return Integer.MAX_VALUE;
 		}
-		Map<Integer, Integer> doubles = new HashMap<>();
 		List<Integer> lookup = new ArrayList<>();
+		List<Integer> doubles = new ArrayList<>();
 
 		int sign = dividend < 0 ^ divisor < 0 ? -1 : 1;
 		if (dividend > 0) {
@@ -41,30 +42,27 @@ public class DivideWithoutOperators {
 		if (divisor > 0) {
 			divisor = -divisor;// converting to negative as negative have more range
 		}
-		int quotient = 0;
-		// while(dividend <= divisor) {//60,13
 
+		int quotient = 0;
 		int value = divisor;
 		int doubleCount = 1;
-		int counter = 0;
-		if (value >= Integer.MIN_VALUE / 2 && (value + value) > dividend) {
-			value += value;// 26,52
+		while(divisor >= dividend) {
+			doubles.add(doubleCount);
+			lookup.add(divisor);
+	        if (divisor < HALF_INT_MIN) {
+	            break;
+	        }
+	        divisor += divisor;// 26,52
 			doubleCount += doubleCount;// 2,4
-			// }
-
-			dividend -= value; // 60-52
-			quotient += doubleCount;
-			doubles.put(counter++, quotient);
-			lookup.add(quotient);
 		}
 		int i;
-		while (dividend <= divisor) {
-			for (i = 0; lookup.get(i) < dividend; i++) {
-
+			for (i = lookup.size()-1;  i >=0; i--) {
+				if(lookup.get(i)>=dividend){
+					quotient += doubles.get(i);
+					dividend -= lookup.get(i); // 60-52		
+				}
 			}
-		}
-		// }
-		// return sign == -1 ? -quotient:quotient;
+		return sign == -1 ? -quotient:quotient;
 	}
 
 	private static int fastdivide(int dividend, int divisor) {
