@@ -33,10 +33,10 @@ public class DivideWithoutOperators {
 			divisor = -divisor;//converting to negative as negative have more range	
 		}
 		int quotient =0;
-		while(dividend >= divisor) {//60,13
+		while(dividend <= divisor) {//60,13
 			int value = divisor;
 			int doubleCount = 1;
-			if(value + value < dividend) {
+			if(value + value > dividend) {
 				value += value;//26,52
 				doubleCount+=doubleCount;//2,4
 			}
@@ -44,7 +44,7 @@ public class DivideWithoutOperators {
 			quotient +=doubleCount;
 			
 		}
-		return quotient;
+		return sign == -1 ? -quotient:quotient;
 	}
 
 	public static int divide(int dividend, int divisor) {
