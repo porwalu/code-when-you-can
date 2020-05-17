@@ -28,7 +28,7 @@ public class DivideWithoutOperators {
 			dividend = -dividend;
 		}
 		if (divisor > 0) {
-			divisor = -divisor;
+			divisor = -divisor;//converting to negative as negative have more range
 		}
 		int count = 0;
 		while (dividend <= divisor) {
