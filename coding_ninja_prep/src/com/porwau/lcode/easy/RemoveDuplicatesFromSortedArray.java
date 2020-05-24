@@ -16,8 +16,6 @@ public class RemoveDuplicatesFromSortedArray {
 			nums[index] = nums[i];
 			}
 		}
-		// nums[index ] = nums[nums.length -1];
-
 		return index + 1;
 	}
 
