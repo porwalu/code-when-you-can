@@ -1,5 +1,12 @@
 package com.porwau.lcode.easy;
 
+/**
+ * Longest common prefix - only the prefix starting from begining for word.<br>
+ * if array is null, return blank.
+ * 
+ * @author Utkarsh Porwal
+ *
+ */
 public class LongestCommonPrefix {
 
 	private static String findPrefix(String[] strings) {
