@@ -8,7 +8,8 @@ public class LongestCommonPrefix {
 		}
 		String prefix = strings[0];
 		for (int i = 1; i < strings.length; i++) {
-			while (strings[i].indexOf(prefix) != 0) {
+			while (strings[i].indexOf(prefix) != 0) {// if it matches and it is a prefix, meaning, first index
+													// should always be 0.
 				prefix = prefix.substring(0, prefix.length() - 1);
 			}
 		}
