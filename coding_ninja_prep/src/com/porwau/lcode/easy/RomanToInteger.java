@@ -14,7 +14,14 @@ package com.porwau.lcode.easy;
 public class RomanToInteger {
 
 	public static void main(String[] args) {
-		String roman = "IV";
+		String roman = "III";
+		roman = roman.replaceAll("IV", "4");
+		roman = roman.replaceAll("IX", "9");
+		roman = roman.replaceAll("XL", "40");
+		roman = roman.replaceAll("XC", "90");
+		roman = roman.replaceAll("CD", "400");
+		roman = roman.replaceAll("CM", "900");
+		System.out.println(roman);
 		System.out.println("Integer value for Roman " + roman + " is " + romanToIntger(roman));
 	}
 
@@ -45,7 +52,7 @@ public class RomanToInteger {
 		case 'M':
 			return 1000;
 		default:
-			return -1;
+			return Character.getNumericValue(roman);
 		}
 	}
 }
