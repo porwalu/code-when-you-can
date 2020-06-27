@@ -3,6 +3,11 @@ package com.porwau.lcode.medium;
 import com.porwau.datastructures.SLinkedList;
 import com.porwau.datastructures.Node;
 
+/**
+ * lcode - 2. Add Two Numbers
+ * @author Utkarsh
+ *
+ */
 public class SumViaLinkedList {
 
 	public static void main(String[] args) {
