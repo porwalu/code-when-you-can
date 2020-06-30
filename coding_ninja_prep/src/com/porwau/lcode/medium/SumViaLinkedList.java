@@ -4,18 +4,17 @@ import com.porwau.datastructures.SLinkedList;
 import com.porwau.datastructures.Node;
 
 public class SumViaLinkedList {
-	
+
 	public static void main(String[] args) {
 		SLinkedList sll2 = new SLinkedList();
 		SLinkedList sll3 = new SLinkedList();
+		sll2.add(7);
 		sll2.add(3);
-		sll2.add(4);
-		sll2.add(2);
+		// sll2.add(9);
 		sll2.printList();
-
-		sll3.add(4);
-		sll3.add(6);
-		sll3.add(5);
+		sll3.add(2);
+		// sll3.add(3);
+		sll3.add(9);
 		sll3.printList();
 
 		Node n1 = sll2.getHead().getNext();
@@ -23,8 +22,8 @@ public class SumViaLinkedList {
 		Node n3 = new Node();
 		Node orign3 = n3;
 		int q1 = 0;
-		while (n1 != null && n2 != null) {//This will by itsef handle case of same length LinkedLists
-			int sum = n1.getData() + n2.getData();
+		while (n1 != null && n2 != null) {// This will by itself handle case of same length LinkedLists
+			int sum = n1.getData() + n2.getData() + q1;
 			int rem = 0;
 			int quotient = 0;
 			if (sum >= 10) {
@@ -33,19 +32,45 @@ public class SumViaLinkedList {
 			} else {
 				rem = sum;
 			}
-			n3.setNext(new Node(rem + q1));
+			n3.setNext(new Node(rem));
 			n1 = n1.getNext();
 			n2 = n2.getNext();
-			n3=n3.getNext();
-			q1 = quotient;			
+			n3 = n3.getNext();
+			q1 = quotient;
 		}
-		
-
+		if (q1 != 0 && n1 != null && n2 != null) {
+			n3.setNext(new Node(q1));
+		}
+		if (n1 == null) {// case 3 where n2 is not null. continue stuff of n2 into n3
+			while (n2 != null) {
+				if (q1 + n2.getData() >= 10) {
+					n3.setNext(new Node((q1 + n2.getData()) % 10));
+				} else {
+					n3.setNext(new Node(q1 + n2.getData()));
+				}
+				q1 = (q1 + n2.getData()) / 10;
+				n2 = n2.getNext();
+				n3 = n3.getNext();
+			}
+		}
+		if (n2 == null) {// case 1 where n1 is not null
+			while (n1 != null) {
+				if (q1 + n1.getData() >= 10) {
+					n3.setNext(new Node((q1 + n1.getData()) % 10));
+					q1 = (q1 + n1.getData()) / 10;
+				} else {
+					n3.setNext(new Node(q1 + n1.getData()));
+				}
+				n1 = n1.getNext();
+				n3 = n3.getNext();
+			}
+		}
+		if (q1 != 0) {
+			n3.setNext(new Node(q1));
+		}
 		while (orign3 != null) {
 			System.out.print("[" + orign3.getData() + "]");
 			orign3 = orign3.getNext();
 		}
-
 	}
-
 }
