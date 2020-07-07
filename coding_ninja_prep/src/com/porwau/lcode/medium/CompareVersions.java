@@ -1,4 +1,4 @@
-package com.porwau.lcode.easy;
+package com.porwau.lcode.medium;
 
 //If version1 < version2, return -1.
 //If version1 > version2, return 1.
