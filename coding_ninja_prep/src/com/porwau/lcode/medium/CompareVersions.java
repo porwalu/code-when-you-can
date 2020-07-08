@@ -7,8 +7,8 @@ package com.porwau.lcode.easy;
 public class CompareVersions {
 
 	static int compareVer(String version1, String version2) {
-String v = "000010";
- String ve1 = v.replaceAll("^0+", "");
+String v = "01";
+ String ve1 = v.replaceAll("^0+(?!$)", "");//negative lookahead.
  System.out.println(ve1);
 
 		String[] v1 = version1.split("\\.");
