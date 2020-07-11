@@ -10,22 +10,6 @@ import java.util.List;
  *         for SinglyLinkedList. 1.0 - Added the reverse linked list method. 0.9
  *         - Added code to structure SLL, with add, remove, print methods
  */
-class Node {
-	Node next;
-	int data;
-
-	Node(int data) {
-		this.data = data;
-	}
-
-	public Node() {
-		System.out.println("Hello Head");
-	}
-
-	public Node getNext(Node n) {
-		return n.next;
-	}
-}
 
 /**
  * This implementation adds and removes the first element after head . This also
@@ -41,6 +25,15 @@ class SinglyLinkedList {
 	}
 
 	private Node head;
+
+	public Node getHead() {
+		return head;
+	}
+
+	public void setHead(Node head) {
+		this.head = head;
+	}
+
 	private int length;
 
 	/**
@@ -54,7 +47,7 @@ class SinglyLinkedList {
 			System.out.println("There is only head node and hence we cant remove anything else");
 			return false;
 		}
-		head.next = head.next.next;
+		head.setNext(head.getNext().getNext());
 		length = getLength() - 1;
 		return true;
 	}
@@ -65,8 +58,8 @@ class SinglyLinkedList {
 	 */
 	public boolean add(int data) {
 		Node n = new Node(data);
-		n.next = head.next;
-		head.next = n;
+		n.setNext(head.getNext());
+		head.setNext(n);
 		length = getLength() + 1;
 		return true;
 	}
@@ -75,11 +68,11 @@ class SinglyLinkedList {
 	 * printList() method to Override toString to display content of LinkedList.
 	 */
 	public void printList() {
-		Node currNode = head.next;
+		Node currNode = head.getNext();
 		System.out.print("Linked list is - ");
 		while (currNode != null) {
-			System.out.print("[" + currNode.data + "]");
-			currNode = currNode.next;
+			System.out.print("[" + currNode.getData() + "]");
+			currNode = currNode.getNext();
 		}
 		System.out.println("");
 	}
@@ -91,15 +84,15 @@ class SinglyLinkedList {
 	 */
 	public boolean reverse() {
 		Node prev = null;
-		Node curr = head.next;
+		Node curr = head.getNext();
 		Node next = null;
 		while (curr != null) {
-			next = curr.next;
-			curr.next = prev;
+			next = curr.getNext();
+			curr.setNext(prev);
 			prev = curr;
 			curr = next;
 		}
-		head.next = prev;
+		head.setNext(prev);
 		return true;
 	}
 
@@ -133,17 +126,17 @@ class SinglyLinkedList {
 			Node curr = head;
 			Node prev = null;
 			if (index == 0) {
-				head.next = insert;
-				insert.next = null;
+				head.setNext(insert);
+				insert.setNext(null);
 			} else {
 				int i = 0;
 				while (i != (index)) {
 					prev = curr;
-					curr = curr.next;
+					curr = curr.getNext();
 					i++;
 				}
-				insert.next = curr;
-				prev.next = insert;
+				insert.setNext(curr);
+				prev.setNext(insert);
 			}
 			increaseLength();
 			return true;
@@ -165,10 +158,10 @@ class SinglyLinkedList {
 		int i = 0;
 		while (i != index) {
 			prev = curr;
-			curr = curr.next;
+			curr = curr.getNext();
 			i++;
 		}
-		prev.next = curr.next;
+		prev.setNext(curr.getNext());
 		reduceLength();
 		return true;
 	}
@@ -191,6 +184,16 @@ public class SinglyLinkedListImplementation {
 		sll.printList();
 		sll.removeAtIndex(4);
 		sll.printList();
+		SinglyLinkedList sll2 = new SinglyLinkedList();
+		SinglyLinkedList sll3 = new SinglyLinkedList();
+		sll2.add(3);
+		sll2.add(4);
+		sll2.add(2);
+		sll2.printList();
 
+		sll3.add(4);
+		sll3.add(6);
+		sll3.add(5);
+		sll3.printList();
 	}
 }
