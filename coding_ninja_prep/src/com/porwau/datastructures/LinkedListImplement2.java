@@ -21,12 +21,12 @@ class SinglyLinkedList1 {
 	 * Removes the tail node.
 	 */
 	public void remove() {// this has to traverse since its not double link
-		Node n = head.next;
-		while (n.next.next != null) {
+		Node n = head.getNext();
+		while (n.getNext().getNext() != null) {
 			// do nothing
-			n = n.next;
+			n = n.getNext();
 		}
-		n.next = null;
+		n.setNext(null);
 	}
 
 	/**
@@ -36,7 +36,7 @@ class SinglyLinkedList1 {
 	 */
 	public void add(int data) {// constant time
 		Node n = new Node(data);
-		n.next = null;
+		n.setNext(null);
 //		tail.next = n;
 //		tail = n;
 	}
@@ -45,14 +45,14 @@ class SinglyLinkedList1 {
 	 * printList() method to Override toString to display content of LinkedList.
 	 */
 	public void printList() {
-		Node currNode = head.next;
+		Node currNode = head.getNext();
 		System.out.println("");
 
 		System.out.print("Linked list is - ");
 
 		while (currNode != null) {
-			System.out.print("[" + currNode.data + "]");
-			currNode = currNode.next;
+			System.out.print("[" + currNode.getData() + "]");
+			currNode = currNode.getNext();
 		}
 	}
 
@@ -67,9 +67,10 @@ class SinglyLinkedList1 {
 public class LinkedListImplement2 {
 	public static void main(String[] args) {
 		SinglyLinkedList1 sll = new SinglyLinkedList1();
-		sll.add(2);
-		sll.add(3);
+		SinglyLinkedList1 sl2 = new SinglyLinkedList1();
+		sll.add(5);
 		sll.add(4);
+		sll.add(6);
 		sll.printList();
 	//	sll.remove();
 		sll.add(2);
