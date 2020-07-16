@@ -7,12 +7,16 @@ package com.porwau.lcode.easy;
 public class CompareVersions {
 
 	static int compareVer(String version1, String version2) {
+String v = "000010";
+ String ve1 = v.replaceAll("^0+", "");
+ System.out.println(ve1);
+
 		String[] v1 = version1.split("\\.");
 		String[] v2 = version2.split("\\.");
-		if(Integer.parseInt(v1[0]) < Integer.parseInt(v2[0])) {
+		if (Integer.parseInt(v1[0]) < Integer.parseInt(v2[0])) {
 			System.out.println("v1 < v2");
 			return -1;
-		}else if(Integer.parseInt(v1[0]) > Integer.parseInt(v2[0])){
+		} else if (Integer.parseInt(v1[0]) > Integer.parseInt(v2[0])) {
 			System.out.println("v1 > v2");
 			return 1;
 		}
