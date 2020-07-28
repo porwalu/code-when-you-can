@@ -222,7 +222,14 @@ class BinarySearchTree {
 				parentNode = currNode;
 				currNode = currNode.getLeft();
 			} else {// we found match to delete.
-					// 1. node with 1 child
+					// 1. node with no right child
+				if(currNode.getRight() == null) {
+					if(parentNode == null) {//currNode is root.
+						this.root = currNode.getLeft();	
+					}else {
+						parentNode.left = currNode.getLeft();
+					}
+				}
 					// 2. node with 2 children
 					// 3. Leaf node.
 

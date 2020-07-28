@@ -43,9 +43,10 @@ public class BinaryToDecimalViaLinkedlist {
 	public static void main(String[] args) {
 		BinaryLinkedList bll = new BinaryLinkedList();
 		bll.insert(1);
-		bll.insert(0);
 		bll.insert(1);
-		getDecimalValue(bll.head);
+		bll.insert(0);
+//ABove will be inserted as 101
+		System.out.println("Binary to Decimal value is - "+ getDecimalValue(bll.head));
 
 		
 
