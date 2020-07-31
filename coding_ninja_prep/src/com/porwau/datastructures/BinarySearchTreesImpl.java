@@ -215,9 +215,11 @@ class BinarySearchTree {
 		TreeNode parentNode = null;
 		while (currNode != null) {
 			if (value > currNode.getData()) {
+				parentNode = currNode;
 				currNode = currNode.getRight();
 
 			} else if (value < currNode.getData()) {// go left
+				parentNode = currNode;
 				currNode = currNode.getLeft();
 			} else {// we found match to delete.
 					// 1. node with 1 child
