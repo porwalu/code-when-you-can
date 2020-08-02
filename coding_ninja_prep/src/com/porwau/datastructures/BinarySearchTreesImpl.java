@@ -212,20 +212,25 @@ class BinarySearchTree {
 
 	public boolean delete(int value) {
 		TreeNode currNode = root;
-		while(currNode != null) {
+		TreeNode parentNode = null;
+		while (currNode != null) {
 			if (value > currNode.getData()) {
 				currNode = currNode.getRight();
-				
-			}else if(value < currNode.getData()) {//go left
+
+			} else if (value < currNode.getData()) {// go left
 				currNode = currNode.getLeft();
-			}else {
+			} else {// we found match to delete.
+					// 1. node with 1 child
+					// 2. node with 2 children
+					// 3. Leaf node.
+
 				System.out.println("Delete me " + currNode.getData());
-				currNode= null;
+				currNode = null;
 				return true;
 			}
-				
+
 		}
-		//not found if not returned yet.
+		// not found if not returned yet.
 		System.out.println("Node not found");
 
 		return false;
@@ -295,6 +300,5 @@ public class BinarySearchTreesImpl {
 		bst.delete(6);
 		bst.traverseInOrder();
 
-		
 	}
 }
