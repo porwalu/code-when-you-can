@@ -211,12 +211,24 @@ class BinarySearchTree {
 	}
 
 	public boolean delete(int value) {
-		if (root == null) {
-			System.out.println("Empty tree!! Value can't be deleted.");
-			return false;
-		} else {
-			return root.delete(value);
+		TreeNode currNode = root;
+		while(currNode != null) {
+			if (value > currNode.getData()) {
+				currNode = currNode.getRight();
+				
+			}else if(value < currNode.getData()) {//go left
+				currNode = currNode.getLeft();
+			}else {
+				System.out.println("Delete me " + currNode.getData());
+				currNode= null;
+				return true;
+			}
+				
 		}
+		//not found if not returned yet.
+		System.out.println("Node not found");
+
+		return false;
 	}
 
 	/**
@@ -280,5 +292,9 @@ public class BinarySearchTreesImpl {
 		int lookupValue = 100;
 		System.out.println("BST Lookup of " + lookupValue + " is "
 				+ (bst.lookup(lookupValue) == true ? "successful" : "not successful"));
+		bst.delete(6);
+		bst.traverseInOrder();
+
+		
 	}
 }
