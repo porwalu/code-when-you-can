@@ -239,7 +239,16 @@ class BinarySearchTree {
 	}
 	
 	public TreeNode getMinAlt() {
-		
+		TreeNode currNode = root;
+		TreeNode prevNode;
+		while(currNode != null ) {
+			if(currNode.getLeft() !=null) {
+				prevNode = currNode;
+				currNode = currNode.getLeft();		
+			}else {
+				return currNode;
+			}
+		}
 		return null;
 	}
 }
@@ -260,6 +269,8 @@ public class BinarySearchTreesImpl {
 		bst.get(9);
 		System.out.println("Max value is " + bst.getMax());
 		System.out.println("Min value is " + bst.getMin());
+		System.out.println("Min value via alt is " + bst.getMinAlt());
+
 		int lookupValue = 100;
 		System.out.println("BST Lookup of " + lookupValue + " is "
 				+ (bst.lookup(lookupValue) == true ? "successful" : "not successful"));
