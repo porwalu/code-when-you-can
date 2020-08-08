@@ -209,6 +209,7 @@ class BinarySearchTree {
 			return root.getMin();
 		}
 	}
+	
 
 	public boolean delete(int value) {
 		if (root == null) {
@@ -235,6 +236,11 @@ class BinarySearchTree {
 			}
 		}
 		return false;
+	}
+	
+	public TreeNode getMinAlt() {
+		
+		return null;
 	}
 }
 
