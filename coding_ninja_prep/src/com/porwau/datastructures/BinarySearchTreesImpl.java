@@ -159,13 +159,13 @@ class BinarySearchTree {
 		// 2. node has 1 child
 		// 3. node has 2 children
 		public boolean delete(int value) {
-			if (value > data) {//check on RHS
+			if (value > data) {// check on RHS
 				right.delete(value);
-			}else if (value < data){//check on LHS
-				left.delete(value);	
+			} else if (value < data) {// check on LHS
+				left.delete(value);
 			} else {
-				if(left == null && right == null) {
-					
+				if (left == null && right == null) {
+
 				}
 			}
 			return false;
@@ -218,18 +218,19 @@ class BinarySearchTree {
 			return root.delete(value);
 		}
 	}
+
 	public boolean lookup(int value) {
 		TreeNode currNode = root;
-		while(currNode !=null) {
-			if(currNode.getData() < value) {
+		while (currNode != null) {
+			if (currNode.getData() < value) {
 				currNode = currNode.getRight();
-			}else if(currNode.getData() > value) {
+			} else if (currNode.getData() > value) {
 				currNode = currNode.getRight();
-			}else {
+			} else {
 				return true;
 			}
 		}
-		return false;		
+		return false;
 	}
 }
 
@@ -250,6 +251,7 @@ public class BinarySearchTreesImpl {
 		System.out.println("Max value is " + bst.getMax());
 		System.out.println("Min value is " + bst.getMin());
 		int lookupValue = 100;
-		System.out.println("BST Lookup of " + lookupValue + " is " + (bst.lookup(lookupValue) == true ? "successful" : "not successful")) ;
+		System.out.println("BST Lookup of " + lookupValue + " is "
+				+ (bst.lookup(lookupValue) == true ? "successful" : "not successful"));
 	}
 }
