@@ -154,6 +154,10 @@ class BinarySearchTree {
 			return Integer.toString(this.getData());
 		}
 
+		// Delete cases
+		// 1. node is a leaf
+		// 2. node has 1 child
+		// 3. node has 2 children
 		public boolean delete(int value) {
 			return false;
 		}
@@ -196,8 +200,9 @@ class BinarySearchTree {
 			return root.getMin();
 		}
 	}
+
 	public boolean delete(int value) {
-		if(root == null) {
+		if (root == null) {
 			System.out.println("Empty tree!! Min value can't be obtained.");
 			return false;
 		} else {
