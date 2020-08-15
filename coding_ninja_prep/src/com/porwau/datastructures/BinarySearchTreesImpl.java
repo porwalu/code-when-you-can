@@ -153,6 +153,10 @@ class BinarySearchTree {
 		public String toString() {
 			return Integer.toString(this.getData());
 		}
+
+		public boolean delete(int value) {
+			return false;
+		}
 	}
 
 	/**
@@ -190,6 +194,14 @@ class BinarySearchTree {
 			return null;
 		} else {
 			return root.getMin();
+		}
+	}
+	public boolean delete(int value) {
+		if(root == null) {
+			System.out.println("Empty tree!! Min value can't be obtained.");
+			return false;
+		} else {
+			return root.delete(value);
 		}
 	}
 }
