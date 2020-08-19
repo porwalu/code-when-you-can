@@ -140,9 +140,11 @@ class BinarySearchTree {
 		}
 
 		public TreeNode getMin() {// check on left side.
-
-			return null;
-		}
+			if (left != null) {
+				return left.getMin();
+			} else {
+				return this;
+			}		}
 
 		public String toString() {
 			return Integer.toString(this.getData());
@@ -178,6 +180,15 @@ class BinarySearchTree {
 			return root.getMax();
 		}
 	}
+	public TreeNode getMin() {
+		// TODO Auto-generated method stub
+		if (root == null) {
+			System.out.println("Empty tree!! Min value can't be obtained.");
+			return null;
+		} else {
+			return root.getMin();
+		}
+	}
 }
 
 public class BinarySearchTreesImpl {
@@ -185,16 +196,18 @@ public class BinarySearchTreesImpl {
 	public static void main(String[] args) {
 		BinarySearchTree bst = new BinarySearchTree();
 		bst.insert(9);
-		bst.insert(4);
-		bst.insert(20);
-		bst.insert(1);
-		bst.insert(6);
-		bst.insert(15);
-		bst.insert(170);
+//		bst.insert(4);
+//		bst.insert(20);
+//		bst.insert(1);
+//		bst.insert(6);
+//		bst.insert(15);
+//		bst.insert(170);
 		bst.traverseInOrder();
 		System.out.println();
 //		bst.get(9);
-		System.out.println("Max value is " + bst.getMax());
+//		System.out.println("Max value is " + bst.getMax());
+		System.out.println("Min value is " + bst.getMin());
+
 	}
 
 }
