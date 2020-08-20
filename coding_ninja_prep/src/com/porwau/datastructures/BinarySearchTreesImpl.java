@@ -128,6 +128,25 @@ class BinarySearchTree {
 			}
 		}
 
+		/**
+		 * @return node containing the max value in the tree.
+		 */
+		public TreeNode getMax() {// check on right side
+			if (right != null) {
+				return right.getMax();
+			} else {
+				return this;
+			}
+		}
+
+		public TreeNode getMin() {// check on left side.
+
+			return null;
+		}
+
+		public String toString() {
+			return Integer.toString(this.getData());
+		}
 	}
 
 	/**
@@ -149,22 +168,33 @@ class BinarySearchTree {
 			return root.get(value);
 		}
 	}
+
+	public TreeNode getMax() {
+		// TODO Auto-generated method stub
+		if (root == null) {
+			System.out.println("Empty tree!! Max value can't be obtained.");
+			return null;
+		} else {
+			return root.getMax();
+		}
+	}
 }
 
 public class BinarySearchTreesImpl {
 
 	public static void main(String[] args) {
 		BinarySearchTree bst = new BinarySearchTree();
-//		bst.insert(9);
-//		bst.insert(4);
-//		bst.insert(20);
-//		bst.insert(1);
-//		bst.insert(6);
-//		bst.insert(15);
-//		bst.insert(170);
+		bst.insert(9);
+		bst.insert(4);
+		bst.insert(20);
+		bst.insert(1);
+		bst.insert(6);
+		bst.insert(15);
+		bst.insert(170);
 		bst.traverseInOrder();
 		System.out.println();
-		bst.get(9);
+//		bst.get(9);
+		System.out.println("Max value is " + bst.getMax());
 	}
 
 }
