@@ -87,10 +87,8 @@ class BinarySearchTree {
 		}
 
 		/**
-		 * this is traverse method of the node.
-		 * Inorder means doing the left side, then node
-		 * and then right
-		 * When done on BST - it gives ascending list
+		 * this is traverse method of the node. Inorder means doing the left side, then
+		 * node and then right When done on BST - it gives ascending list
 		 */
 		public void traverseInOrder() {
 			if (left != null) {
@@ -101,23 +99,33 @@ class BinarySearchTree {
 				right.traverseInOrder();
 			}
 		}
-		
+
+		/**
+		 * @param value to search
+		 * @return TreeNode containing the value else null, if not found
+		 */
 		public TreeNode get(int value) {
-			if(value == data) {
-				System.out.println();
-				System.out.println(value +" found.");
+			if (value == data) {
+				System.out.println(value + " found.");
 
 				return this;
 			} else {
-				if(value < data) {
-					return left.get(value);
-				}else {
-					return right.get(value);
+				if (value < data) {
+					if (left != null) {
+						return left.get(value);
+					} else {
+						System.out.println("Value " + value + " doesn't exist.");
+						return null;
+					}
+				} else {
+					if (right != null) {
+						return right.get(value);
+					} else {
+						System.out.println("Value " + value + " doesn't exist.");
+						return null;
+					}
 				}
-				
 			}
-//			System.out.println("Value " + value + " doesn't exist.");
-//			return null;
 		}
 
 	}
@@ -128,13 +136,16 @@ class BinarySearchTree {
 	public void traverseInOrder() {
 		if (root != null) {
 			root.traverseInOrder();// method is called on the node.
+		} else {
+			System.out.println("Empty Tree!! Can't traverse.");
 		}
 	}
 
 	public TreeNode get(int value) {
-		if(root.getData() == value) {
-			return root;
-		}else {
+		if (root == null) {
+			System.out.println("Empty Tree!! Can't get " + value);
+			return null;
+		} else {
 			return root.get(value);
 		}
 	}
@@ -144,15 +155,16 @@ public class BinarySearchTreesImpl {
 
 	public static void main(String[] args) {
 		BinarySearchTree bst = new BinarySearchTree();
-		bst.insert(9);
-		bst.insert(4);
-		bst.insert(20);
-		bst.insert(1);
-		bst.insert(6);
-		bst.insert(15);
-		bst.insert(170);
+//		bst.insert(9);
+//		bst.insert(4);
+//		bst.insert(20);
+//		bst.insert(1);
+//		bst.insert(6);
+//		bst.insert(15);
+//		bst.insert(170);
 		bst.traverseInOrder();
-		bst.get(100);
+		System.out.println();
+		bst.get(9);
 	}
 
 }
