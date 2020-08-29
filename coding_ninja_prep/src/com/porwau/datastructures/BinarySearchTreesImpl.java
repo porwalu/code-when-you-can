@@ -88,6 +88,9 @@ class BinarySearchTree {
 
 		/**
 		 * this is traverse method of the node.
+		 * Inorder means doing the left side, then node
+		 * and then right
+		 * When done on BST - it gives ascending list
 		 */
 		public void traverseInOrder() {
 			if (left != null) {
@@ -98,6 +101,24 @@ class BinarySearchTree {
 				right.traverseInOrder();
 			}
 		}
+		
+		public TreeNode get(int value) {
+			if(value == data) {
+				System.out.println();
+				System.out.println(value +" found.");
+
+				return this;
+			} else {
+				if(value < data) {
+					return left.get(value);
+				}else {
+					return right.get(value);
+				}
+				
+			}
+//			System.out.println("Value " + value + " doesn't exist.");
+//			return null;
+		}
 
 	}
 
@@ -107,6 +128,14 @@ class BinarySearchTree {
 	public void traverseInOrder() {
 		if (root != null) {
 			root.traverseInOrder();// method is called on the node.
+		}
+	}
+
+	public TreeNode get(int value) {
+		if(root.getData() == value) {
+			return root;
+		}else {
+			return root.get(value);
 		}
 	}
 }
@@ -123,7 +152,7 @@ public class BinarySearchTreesImpl {
 		bst.insert(15);
 		bst.insert(170);
 		bst.traverseInOrder();
-
+		bst.get(100);
 	}
 
 }
