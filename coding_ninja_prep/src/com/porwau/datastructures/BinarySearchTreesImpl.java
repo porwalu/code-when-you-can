@@ -11,17 +11,12 @@ package com.porwau.datastructures;
  */
 class BinarySearchTree {
 
-	private TreeNode root;
-
-	void printTree() {
-
-		return;
-	}
+	private TreeNode root;// root node of tree
 
 	public void insert(int value) {
 		// if just after root else anywhere.
 		TreeNode newNode = new TreeNode(value);
-		if (root == null) {
+		if (root == null) {// this is the first node
 			System.out.println("creating root node with value-  " + value);
 			root = newNode;
 			return;
@@ -85,6 +80,22 @@ class BinarySearchTree {
 			this.right = right;
 		}
 
+		public void traverseInOrder() {
+			if (left != null) {
+				left.traverseInOrder();
+			}
+			System.out.print(data + " ,");
+			if (right != null) {
+				right.traverseInOrder();
+			}
+		}
+
+	}
+
+	public void traverseInOrder() {
+		if (root != null) {
+			root.traverseInOrder();// method is called on the node.
+		}
 	}
 }
 
@@ -99,6 +110,7 @@ public class BinarySearchTreesImpl {
 		bst.insert(6);
 		bst.insert(15);
 		bst.insert(170);
+		bst.traverseInOrder();
 
 	}
 
