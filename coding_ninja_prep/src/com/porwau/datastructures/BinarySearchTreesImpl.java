@@ -8,9 +8,9 @@ package com.porwau.datastructures;
  * @author Utkarsh Porwal
  *
  */
-class BinaryTree {
+class BinarySearchTree {
 	
-	TreeNode root;
+	private TreeNode root;
 	
 	class TreeNode{
 		private int data;
@@ -39,7 +39,7 @@ class BinaryTree {
 		
 	}
 }
-public class BinaryTreesImpl {
+public class BinarySearchTreesImpl {
 
 	public static void main(String[] args) {
 
