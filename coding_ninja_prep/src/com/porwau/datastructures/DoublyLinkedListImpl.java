@@ -29,7 +29,7 @@ class DoublyLinkedList<Integer> {
 
 	private Node head;
 	private Node tail;
-	private int data;
+	// private int data;
 	private int length;
 
 	boolean addNode(int data) {// Just after head.
@@ -43,15 +43,16 @@ class DoublyLinkedList<Integer> {
 			head.prev = null;
 			tail = head;
 			newNode = null;
+		} else {
+			newNode.next = head.next;
+			if (head == tail) {
+				tail = newNode;
+			} else {
+				head.next.prev = newNode;
+			}
+			head.next = newNode;
+			newNode.prev = head;
 		}
-		// else {if(head == tail){//Only one node
-//			newNode.next = head.next;
-//			head.next.prev = newNode;
-//			head.next=newNode;
-//			newNode.prev = head;			
-//		}else {//there are many nodes.
-//			
-//		}
 
 		return true;
 	}
@@ -67,6 +68,7 @@ class DoublyLinkedList<Integer> {
 			System.out.print("[" + curr.data + "]");
 			curr = curr.next;
 		}
+		System.out.println();
 	}
 }
 
@@ -76,7 +78,11 @@ public class DoublyLinkedListImpl {
 
 		DoublyLinkedList<Integer> dll = new DoublyLinkedList<Integer>();
 		dll.addNode(10);
+
 		dll.printList();
+		dll.addNode(20);
+		dll.printList();
+
 		System.out.println();
 
 		LinkedList<Integer> ll = new LinkedList<>();
