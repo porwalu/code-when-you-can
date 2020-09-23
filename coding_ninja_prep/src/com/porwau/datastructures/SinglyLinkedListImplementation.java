@@ -110,6 +110,9 @@ class SinglyLinkedList {
 	public void setLength() {
 		length++;
 	}
+	public void redLength() {
+		length--;
+	}
 
 	/**
 	 * Add an element at specific index. 
@@ -144,6 +147,24 @@ class SinglyLinkedList {
 			return true;
 		}
 	}
+	public boolean removeAtIndex(int index) {
+		if (index <= 0 || index >= length) {
+			System.out.println(index + " is invalid index. Valid index range for this LinkedList is from 1 - "
+					+ (getLength() - 1));
+			return false;
+		}
+		Node curr = head;
+		Node prev = null;
+		int i = 0;
+		while(i != index) {
+			prev =curr;
+			curr = curr.next;
+			i++;
+		}
+		prev.next=curr.next;
+		redLength();
+		return true;
+	}
 }
 
 public class SinglyLinkedListImplementation {
@@ -161,5 +182,8 @@ public class SinglyLinkedListImplementation {
 		sll.reverse();
 		sll.remove();
 		sll.printList();
+		sll.removeAtIndex(4);
+		sll.printList();
+
 	}
 }
