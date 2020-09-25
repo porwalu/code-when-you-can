@@ -46,6 +46,7 @@ class SinglyLinkedList {
 	/**
 	 * Removes the node after Head in a linked list. If Head is the only node,
 	 * nothing gets removed
+	 * 
 	 * @return - true if removed or false
 	 */
 	public boolean remove() {
@@ -85,7 +86,8 @@ class SinglyLinkedList {
 
 	/**
 	 * reverse a LinkedList
-	 * @return true if reversed or false
+	 * 
+	 * @return true if r or false
 	 */
 	public boolean reverse() {
 		Node prev = null;
@@ -110,66 +112,51 @@ class SinglyLinkedList {
 	}
 
 	/**
-	 * Add an element at specific index. index of 0 is for Head, hence acceptable
-	 * values are from: 1 - (length-1)
-	 * 
+	 * Add an element at specific index. 
+	 * If there is already an element at index that is sifted to the right. 
 	 * @param index - index to insert record at.
-	 * @param data - data to insert
+	 * @param data  - data to insert
 	 * @return - true if insert is successful else false
 	 */
 	public boolean addAtIndex(int index, int data) {
-		if (index <= 0 || index > (length)) {
+		if (index < 0 || index > (length)) {
 			System.out.println(index + " is invalid index. Valid index range for this linked list is from 1 - "
 					+ (getLength() - 1));
 			return false;
 		} else {
-
-			System.out.println("code in progress");
 			Node insert = new Node(data);
-			Node n = head.next;
-			if (n == null) {//Just after Head
-				head.next = insert;
-				insert.next = null;
+			Node curr = head;
+			Node prev = null;
+		if (index == 0) {
+			head.next=insert;
+			insert.next=null;
+		}else {
+			int i = 0;
+			while (i != (index )) {
+				prev = curr;
+				curr = curr.next;
+				i++;
 			}
-			else if (index == getLength()) {
-				// if index = length - this is the last element
-				while (n.next != null) {
-					n = n.next;
-				}
-				n.next = insert;
-				insert.next = null;
-			} else {
-				// if index is any other value, then insert at tht and shift the original node
-				int i = 1;
-				while (i != (index - 1)) {
-					n = n.next;
-					i++;
-				}
-				// Node insert = new Node(data);
-				insert.next = n.next;
-				n.next = insert;
-			}
+			insert.next = curr;
+			prev.next=insert;
+		}
 			setLength();
 			return true;
 		}
-		// TODO Auto-generated method stub
-
 	}
 }
 
 public class SinglyLinkedListImplementation {
 	public static void main(String[] args) {
 		SinglyLinkedList sll = new SinglyLinkedList();
-//		sll.add(2);
 		System.out.println("Length of linked list including Head node is " + sll.getLength());
-		sll.addAtIndex(1, 4);
-//		sll.remove();
+		sll.addAtIndex(0, 4);
 		sll.printList();
-		sll.addAtIndex(2, 5);
+		sll.addAtIndex(1, 5);
 		sll.printList();
-		sll.addAtIndex(2, 4);
+		sll.addAtIndex(1, 3);
 		sll.printList();
-		sll.addAtIndex(4, 40);
+		sll.addAtIndex(3, 40);
 		sll.printList();
 		sll.reverse();
 		sll.remove();
