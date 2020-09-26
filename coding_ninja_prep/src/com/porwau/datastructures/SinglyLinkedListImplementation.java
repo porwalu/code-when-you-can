@@ -46,13 +46,13 @@ class SinglyLinkedList {
 	/**
 	 * Removes the node after Head in a linked list. If Head is the only node,
 	 * nothing gets removed
+	 * @return - true if removed or false
 	 */
 	public boolean remove() {
 		if (getLength() == 1) {
 			System.out.println("There is only head node and hence we cant remove anything else");
 			return false;
 		}
-
 		head.next = head.next.next;
 		length = getLength() - 1;
 		return true;
@@ -60,12 +60,14 @@ class SinglyLinkedList {
 
 	/**
 	 * @param data - data to be added in linked list
+	 * @return true if added or false
 	 */
-	public void add(int data) {
+	public boolean add(int data) {
 		Node n = new Node(data);
 		n.next = head.next;
 		head.next = n;
 		length = getLength() + 1;
+		return true;
 	}
 
 	/**
@@ -73,18 +75,19 @@ class SinglyLinkedList {
 	 */
 	public void printList() {
 		Node currNode = head.next;
-
 		System.out.print("Linked list is - ");
-
 		while (currNode != null) {
 			System.out.print("[" + currNode.data + "]");
 			currNode = currNode.next;
 		}
 		System.out.println("");
-
 	}
 
-	public void reverse() {
+	/**
+	 * reverse a LinkedList
+	 * @return true if reversed or false
+	 */
+	public boolean reverse() {
 		Node prev = null;
 		Node curr = head.next;
 		Node next = null;
@@ -95,6 +98,7 @@ class SinglyLinkedList {
 			curr = next;
 		}
 		head.next = prev;
+		return true;
 	}
 
 	public int getLength() {
