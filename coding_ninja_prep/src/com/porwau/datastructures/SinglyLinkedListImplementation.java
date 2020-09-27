@@ -4,11 +4,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Typical Node class for a linkedlist
+ * Typical Node class for a LinkedList
  * 
  * @author Utkarsh Porwal Revision History 1.1 - added length and getLength()
  *         for SinglyLinkedList. 1.0 - Added the reverse linked list method. 0.9
- *         - Added code to strtucture SLL, with add, remove, print methods
+ *         - Added code to structure SLL, with add, remove, print methods
  */
 class Node {
 	Node next;
@@ -47,14 +47,15 @@ class SinglyLinkedList {
 	 * Removes the node after Head in a linked list. If Head is the only node,
 	 * nothing gets removed
 	 */
-	public void remove() {
+	public boolean remove() {
 		if (getLength() == 1) {
 			System.out.println("There is only head node and hence we cant remove anything else");
-			return;
+			return false;
 		}
 
 		head.next = head.next.next;
 		length = getLength() - 1;
+		return true;
 	}
 
 	/**
@@ -99,16 +100,18 @@ class SinglyLinkedList {
 	public int getLength() {
 		return length;
 	}
+
 	public void setLength() {
-		 length++;
+		length++;
 	}
+
 	/**
-	 * Add an element at specific index. index of 0 is for Head, hence acceptable values
-	 * are from: 1 - (length-1)
+	 * Add an element at specific index. index of 0 is for Head, hence acceptable
+	 * values are from: 1 - (length-1)
 	 * 
 	 * @param index - index to insert record at.
-	 * @param data
-	 * @return - true if insert successful else false
+	 * @param data - data to insert
+	 * @return - true if insert is successful else false
 	 */
 	public boolean addAtIndex(int index, int data) {
 		if (index <= 0 || index > (length)) {
@@ -116,27 +119,31 @@ class SinglyLinkedList {
 					+ (getLength() - 1));
 			return false;
 		} else {
+
 			System.out.println("code in progress");
+			Node insert = new Node(data);
 			Node n = head.next;
-			if(index == getLength()) {
-				//if index = length - this is the last element
-				while(n.next !=null) {
-					n=n.next;
-				}
-				Node insert = new Node(data);
-				n.next= insert;
-				insert.next=null;
+			if (n == null) {//Just after Head
+				head.next = insert;
+				insert.next = null;
 			}
-			else {
-				//if index is any other value, then insert at tht and shift the original node
-				int i =1;
-				while(i !=(index -1)) {
-					n=n.next;
+			else if (index == getLength()) {
+				// if index = length - this is the last element
+				while (n.next != null) {
+					n = n.next;
+				}
+				n.next = insert;
+				insert.next = null;
+			} else {
+				// if index is any other value, then insert at tht and shift the original node
+				int i = 1;
+				while (i != (index - 1)) {
+					n = n.next;
 					i++;
 				}
-				Node insert = new Node(data);
-				insert.next=n.next;
-				n.next= insert;
+				// Node insert = new Node(data);
+				insert.next = n.next;
+				n.next = insert;
 			}
 			setLength();
 			return true;
@@ -146,32 +153,22 @@ class SinglyLinkedList {
 	}
 }
 
-/**
- * Head of LinkedList has no data but just a reference to the actual node.
- * 
- * @author Utkarsh Porwal
- *
- */
 public class SinglyLinkedListImplementation {
 	public static void main(String[] args) {
 		SinglyLinkedList sll = new SinglyLinkedList();
-		sll.add(2);
-//		sll.add(3);
-//		sll.add(4);
-//		sll.printList();
-//		sll.reverse();
-		sll.printList();
-//		sll.add(4);
+//		sll.add(2);
 		System.out.println("Length of linked list including Head node is " + sll.getLength());
-		sll.addAtIndex(2, 4);
-		System.out.println("Length of linked list including Head node is " + sll.getLength());
-
+		sll.addAtIndex(1, 4);
 //		sll.remove();
 		sll.printList();
 		sll.addAtIndex(2, 5);
 		sll.printList();
-
-//		System.out.println("Length of linked list including Head node is " + sll.getLength());
-
+		sll.addAtIndex(2, 4);
+		sll.printList();
+		sll.addAtIndex(4, 40);
+		sll.printList();
+		sll.reverse();
+		sll.remove();
+		sll.printList();
 	}
 }
