@@ -99,7 +99,9 @@ class SinglyLinkedList {
 	public int getLength() {
 		return length;
 	}
-
+	public void setLength() {
+		 length++;
+	}
 	/**
 	 * Add an element at specific index. index of 0 is for Head, hence acceptable values
 	 * are from: 1 - (length-1)
@@ -115,9 +117,9 @@ class SinglyLinkedList {
 			return false;
 		} else {
 			System.out.println("code in progress");
+			Node n = head.next;
 			if(index == getLength()) {
 				//if index = length - this is the last element
-				Node n = head.next;
 				while(n.next !=null) {
 					n=n.next;
 				}
@@ -127,7 +129,16 @@ class SinglyLinkedList {
 			}
 			else {
 				//if index is any other value, then insert at tht and shift the original node
+				int i =1;
+				while(i !=(index -1)) {
+					n=n.next;
+					i++;
+				}
+				Node insert = new Node(data);
+				insert.next=n.next;
+				n.next= insert;
 			}
+			setLength();
 			return true;
 		}
 		// TODO Auto-generated method stub
@@ -153,9 +164,13 @@ public class SinglyLinkedListImplementation {
 //		sll.add(4);
 		System.out.println("Length of linked list including Head node is " + sll.getLength());
 		sll.addAtIndex(2, 4);
+		System.out.println("Length of linked list including Head node is " + sll.getLength());
 
 //		sll.remove();
 		sll.printList();
+		sll.addAtIndex(2, 5);
+		sll.printList();
+
 //		System.out.println("Length of linked list including Head node is " + sll.getLength());
 
 	}
