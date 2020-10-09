@@ -7,7 +7,10 @@ import java.util.List;
  * Typical Node class for a linkedlist
  * 
  * @author Utkarsh Porwal
- *
+ *Revision History
+ *1.1 - added length and getLength() for SinglyLinkedList. 
+ *1.0 - Added the reverse linked list method.
+ *0.9 - Added code to strtucture SLL, with add, remove, print methods
  */
 class Node {
 	Node next;
@@ -33,15 +36,18 @@ class Node {
 class SinglyLinkedList {
 	public SinglyLinkedList() {
 		head = new Node();
+		length = 1;
 	}
 
 	private Node head;
+	private int length;
 
 	/**
 	 * Removes the node after Head in a linked list.
 	 */
 	public void remove() {
 		head.next = head.next.next;
+		length = getLength() - 1;
 	}
 
 	/**
@@ -51,6 +57,7 @@ class SinglyLinkedList {
 		Node n = new Node(data);
 		n.next = head.next;
 		head.next = n;
+		length = getLength() + 1;
 	}
 
 	/**
@@ -58,7 +65,6 @@ class SinglyLinkedList {
 	 */
 	public void printList() {
 		Node currNode = head.next;
-		System.out.println("");
 
 		System.out.print("Linked list is - ");
 
@@ -66,6 +72,8 @@ class SinglyLinkedList {
 			System.out.print("[" + currNode.data + "]");
 			currNode = currNode.next;
 		}
+		System.out.println("");
+
 	}
 
 	public void reverse() {
@@ -80,6 +88,10 @@ class SinglyLinkedList {
 		}
 		head.next = prev;
 	}
+
+	public int getLength() {
+		return length;
+	}
 }
 
 /**
@@ -91,6 +103,7 @@ class SinglyLinkedList {
 public class SinglyLinkedListImplementation {
 	public static void main(String[] args) {
 		SinglyLinkedList sll = new SinglyLinkedList();
+		sll.getLength();
 		sll.add(2);
 		sll.add(3);
 		sll.add(4);
@@ -99,6 +112,7 @@ public class SinglyLinkedListImplementation {
 		sll.printList();
 		sll.add(4);
 		sll.printList();
+		System.out.println("Length of linked list including Head node is " + sll.getLength());
 
 	}
 }
