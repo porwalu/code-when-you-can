@@ -11,11 +11,11 @@ import java.util.List;
 class SinglyLinkedList1 {
 	public SinglyLinkedList1() {
 		head = new Node();
-		tail = head;
+		//tail = head;
 	}
 
 	private Node head;
-	private Node tail;
+	//private Node tail;
 
 	/**
 	 * Removes the tail node.
@@ -37,8 +37,8 @@ class SinglyLinkedList1 {
 	public void add(int data) {// constant time
 		Node n = new Node(data);
 		n.next = null;
-		tail.next = n;
-		tail = n;
+//		tail.next = n;
+//		tail = n;
 	}
 
 	/**
@@ -71,7 +71,11 @@ public class LinkedListImplement2 {
 		sll.add(3);
 		sll.add(4);
 		sll.printList();
-		sll.remove();
+	//	sll.remove();
+		sll.add(2);
+		sll.add(3);
+		sll.add(4);
+
 		sll.printList();
 	}
 
