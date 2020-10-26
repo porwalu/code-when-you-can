@@ -1,9 +1,10 @@
 package com.porwau.datastructures;
 
-import java.util.LinkedList;
 import java.util.List;
+
 /**
- * This implementation adds and removes  the  element at the end .
+ * This implementation adds and removes the element at the end .
+ * 
  * @author Utkarsh Porwal
  *
  */
@@ -16,31 +17,32 @@ class SinglyLinkedList1 {
 	private Node head;
 	private Node tail;
 
-
 	/**
-	 * Removes the node after Head in a linked list.
+	 * Removes the tail node.
 	 */
-	public void remove() {//this has to traverse since its not double link
+	public void remove() {// this has to traverse since its not double link
 		Node n = head.next;
-		while(n.next.next !=null) {
-			//do nothing
-			n=n.next;
+		while (n.next.next != null) {
+			// do nothing
+			n = n.next;
 		}
-		n.next=null;
+		n.next = null;
 	}
 
 	/**
+	 * add as a tail
+	 * 
 	 * @param data - data to be added in linked list
 	 */
-	public void add(int data) {//constant time
+	public void add(int data) {// constant time
 		Node n = new Node(data);
 		n.next = null;
-		tail.next=n;
-		tail =n;
+		tail.next = n;
+		tail = n;
 	}
 
 	/**
-	 *printList() method to Override toString to display content of LinkedList.
+	 * printList() method to Override toString to display content of LinkedList.
 	 */
 	public void printList() {
 		Node currNode = head.next;
