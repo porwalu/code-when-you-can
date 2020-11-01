@@ -8,6 +8,7 @@ package com.porwau.lcode.easy;
 public class FibonacciSeries {
 
 	private static int fibonacciRecursion(int n) {
+		int i;
 		if (n > 30) {
 			System.out.println("Take it easy. Enter n <= 30");
 			return -1;
@@ -49,9 +50,10 @@ public class FibonacciSeries {
 	}
 
 	public static void main(String[] args) {
-		int n = 59;		
+		int n = 5;		
+		System.out.println((char)('a'+1));
 		System.out.println("Recursive Fibonacci value of " + n + "th term is - " +fibonacciRecursion(n));
-		System.out.println("Iterative Fibonacci value of " + n + "th term is - " + fibonacciIterative(n));
+//		System.out.println("Iterative Fibonacci value of " + n + "th term is - " + fibonacciIterative(n));
 	}
 
 }
