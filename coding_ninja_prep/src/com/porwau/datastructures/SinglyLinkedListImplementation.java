@@ -99,6 +99,27 @@ class SinglyLinkedList {
 	public int getLength() {
 		return length;
 	}
+
+	/**
+	 * Add an element at specific index index of 0 is for head so acceptable values
+	 * are from: 1 - (length-1)
+	 * 
+	 * @param index - index to insert record at.
+	 * @param data
+	 * @return - true if insert successful else false
+	 */
+	public boolean addAtIndex(int index, int data) {
+		if (index <= 0 || index > (length - 1)) {
+			System.out.println(index + " is invalid index. Valid index range for this linked list is from 1 - "
+					+ (getLength() - 1));
+			return false;
+		} else {
+
+			return true;
+		}
+		// TODO Auto-generated method stub
+
+	}
 }
 
 /**
@@ -110,18 +131,19 @@ class SinglyLinkedList {
 public class SinglyLinkedListImplementation {
 	public static void main(String[] args) {
 		SinglyLinkedList sll = new SinglyLinkedList();
-//		sll.add(2);
+		sll.add(2);
 //		sll.add(3);
 //		sll.add(4);
 //		sll.printList();
 //		sll.reverse();
 //		sll.printList();
 //		sll.add(4);
+		sll.addAtIndex(2, 4);
 		System.out.println("Length of linked list including Head node is " + sll.getLength());
 
-		sll.remove();
-		sll.printList();
-		System.out.println("Length of linked list including Head node is " + sll.getLength());
+//		sll.remove();
+//		sll.printList();
+//		System.out.println("Length of linked list including Head node is " + sll.getLength());
 
 	}
 }
