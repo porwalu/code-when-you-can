@@ -17,6 +17,7 @@ public class ValidPalindrome {
 		return s.substring(0, strLen / 2)
 				.equalsIgnoreCase(new StringBuilder(s.substring(mid, strLen)).reverse().toString());
 	}
+
 	public static void main(String[] args) {
 		String str = "A man, a plan, a canal: Panama";
 		String str2 = "Amma";
