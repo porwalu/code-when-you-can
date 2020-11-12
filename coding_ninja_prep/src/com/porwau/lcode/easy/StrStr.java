@@ -1,5 +1,10 @@
 package com.porwau.lcode.easy;
 
+/**
+ * Leetcode - 28. Implement strStr()
+ * @author Utkarsh Porwal
+ *
+ */
 public class StrStr {
 
 	private static int strStr(String haystack, String needle) {
