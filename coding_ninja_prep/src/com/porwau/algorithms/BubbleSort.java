@@ -11,6 +11,7 @@ public class BubbleSort {
 
 	public static void main(String[] args) {
 
+		//Tip for string sorting. use compareTo method accordingly
 		int[] intArr = { 78, 1, 12, 1, 23, 45, 23 };
 		bubbleSortDescending(intArr);
 		bubbleSortAscending(intArr);
@@ -54,6 +55,5 @@ public class BubbleSort {
 		}
 		System.out.println("Ascending Bubble Sort" + Arrays.toString(intArr));
 	}
-
 }
 //Time complexity O(n^2) and Space complexity O(1)
