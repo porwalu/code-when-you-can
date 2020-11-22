@@ -18,7 +18,6 @@ public class FirstBadVersion {
 		System.out.println("First Bad version via linear search is " + findFirstBadLinear(versionCount));
 		System.out.println("First Bad version via binary search is " + findFirstBadLogarithimic(versionCount));
 	}
-
 	/**
 	 * @param versionCount -Version number which is detected as bad
 	 * @return -first bad version This will have O(logn) complexity
