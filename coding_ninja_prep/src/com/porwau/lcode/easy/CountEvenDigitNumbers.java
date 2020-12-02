@@ -3,13 +3,13 @@ package com.porwau.lcode.easy;
 import java.util.Arrays;
 
 /**
- * @author Utkarsh Porwal
- *Functionality is to take array of integers and return the count of numbers having even digits.
- *array size criteria - 1 <= nums.length <= 500 and number value criteria - 1 <= nums[i] <= 10^5
+ * @author Utkarsh Porwal Functionality is to take array of integers and return
+ *         the count of numbers having even digits. array size criteria - 1 <=
+ *         nums.length <= 500 and number value criteria - 1 <= nums[i] <= 10^5
  */
 public class CountEvenDigitNumbers {
 	/**
-	 * @param nums - Array containing the list of numbers  
+	 * @param nums - Array containing the list of numbers
 	 * @return - the count of numbers with even digits
 	 */
 	private static int countEven(int[] nums) {
