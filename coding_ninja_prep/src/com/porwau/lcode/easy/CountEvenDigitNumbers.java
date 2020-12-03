@@ -3,9 +3,11 @@ package com.porwau.lcode.easy;
 import java.util.Arrays;
 
 /**
- * @author Utkarsh Porwal Functionality is to take array of integers and return
+ * 			Functionality is to take array of integers and return
  *         the count of numbers having even digits. array size criteria - 1 <=
  *         nums.length <= 500 and number value criteria - 1 <= nums[i] <= 10^5
+ *          @author Utkarsh Porwal 
+
  */
 public class CountEvenDigitNumbers {
 	/**
