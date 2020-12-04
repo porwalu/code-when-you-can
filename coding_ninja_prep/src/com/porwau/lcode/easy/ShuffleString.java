@@ -1,10 +1,11 @@
 package com.porwau.lcode.easy;
 
 /**
- * @author Utkarsh Porwal
  *This program takes a random string and an array having the integer values.
  *The string will be shuffled such that the character at the ith position 
  *moves to indices[i] in the shuffled string.
+ * @author Utkarsh Porwal
+
  */
 public class ShuffleString {
 
