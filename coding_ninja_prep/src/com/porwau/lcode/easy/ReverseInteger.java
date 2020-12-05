@@ -1,7 +1,18 @@
 package com.porwau.lcode.easy;
 
+/**
+ * This method reverses an integer values This also check a case of integer
+ * overflow when the reversed number is outside of the Java integer range
+ * 
+ * @author Utkarsh Porwal
+ *
+ */
 public class ReverseInteger {
 
+	/**
+	 * @param reverseThis - This is the integer to be reversed
+	 * @return The reverse of reverseThis
+	 */
 	private static int reverseInt(int reverseThis) {
 
 		long reversedNum = 0;// This is long because in some cases we can have a reverse number
@@ -12,7 +23,7 @@ public class ReverseInteger {
 
 		}
 		// if (reversedNum < Math.pow(-2, 31) || reversedNum - 1 > (Math.pow(2, 31))) {
-		if (reversedNum < Integer.MIN_VALUE || reversedNum - 1 > Integer.MAX_VALUE) {//Alternate of above
+		if (reversedNum < Integer.MIN_VALUE || reversedNum - 1 > Integer.MAX_VALUE) {// Alternate of above
 			reversedNum = 0;
 		}
 		return (int) reversedNum;
