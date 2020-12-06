@@ -21,11 +21,10 @@ public class ReverseString {
 	public static void main(String[] args) {
 		char[] reverseThis = { 'h', 'e', 'l', 'l', 'o' };
 //		char[] reverseThis = null;
-		if (reverseThis != null) {
+		if (reverseThis != null) {//if we are passing null char arrays
 			reverseString(reverseThis);
 		} else {
 			System.out.println("Char array is null. Please re-enter");
-
 		}
 	}
 
