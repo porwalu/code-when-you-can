@@ -4,6 +4,9 @@ import java.util.Arrays;
 
 public class ReverseString {
 
+	/**
+	 * @param str - character array to reverse
+	 */
 	static void reverseString(char[] str) {
 		//System.out.println(Arrays.toString(str)+ " is reversed to :");
 		System.out.println(Arrays.toString(str)+ " is reversed to :");
@@ -31,4 +34,4 @@ public class ReverseString {
 	}
 
 }
-//Time complexity O(N) and Space complexity is O(1)
+//Time complexity O(N) and Space complexity is O(1).
