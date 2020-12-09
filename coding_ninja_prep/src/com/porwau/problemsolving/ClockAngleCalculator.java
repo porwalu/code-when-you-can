@@ -1,7 +1,5 @@
 package com.porwau.problemsolving;
 
-import java.util.Arrays;
-
 /**
  * This program takes time in hh:mm format and returns the angle in degree
  * between the hour and min hand. <br>
