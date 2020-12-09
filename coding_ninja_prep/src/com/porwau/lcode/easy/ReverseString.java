@@ -28,7 +28,7 @@ public class ReverseString {
 	}
 
 	public static void main(String[] args) {
-		char[] reverseThis = { 'h', 'e', 'l', 'l', 'o' };
+		char[] reverseThis = { 'h', 'e', 'l', 'l', 'o' ,' ','t','h'};
 //		char[] reverseThis = null;
 		if (reverseThis != null) {//if we are passing null char arrays
 			reverseString(reverseThis);//Use this 
