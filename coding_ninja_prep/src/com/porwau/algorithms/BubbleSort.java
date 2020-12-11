@@ -2,6 +2,11 @@ package com.porwau.algorithms;
 
 import java.util.Arrays;
 
+/**
+ * This class sorting array in ascending and descending order using Bubble sort.
+ * @author Utkarsh Porwal
+ *
+ */
 public class BubbleSort {
 
 	public static void main(String[] args) {
@@ -10,9 +15,11 @@ public class BubbleSort {
 		bubbleSortDescending(intArr);
 		bubbleSortAscending(intArr);
 
-
 	}
 
+	/**
+	 * @param intArr -  Array of integer to be sorted in descending order using bubble sort.
+	 */
 	private static void bubbleSortDescending(int[] intArr) {
 		int arrLength = intArr.length;
 		int tmp = 0;
@@ -26,9 +33,12 @@ public class BubbleSort {
 			}
 
 		}
-		System.out.println("Ascending Bubble Sort" + Arrays.toString(intArr));
+		System.out.println("Descending Bubble Sort" + Arrays.toString(intArr));
 	}
-	
+
+	/**
+	 * @param intArr - Array of integer to be sorted in ascending order using bubble sort.
+	 */
 	private static void bubbleSortAscending(int[] intArr) {
 		int arrLength = intArr.length;
 		int tmp = 0;
@@ -46,3 +56,4 @@ public class BubbleSort {
 	}
 
 }
+//Time complexity O(n^2) and Space complexity O(1)
