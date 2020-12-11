@@ -7,8 +7,18 @@ package com.porwau.lcode.easy;
  */
 public class FibonacciSeries {
 
-	private static void fibonacciRecursion(int n) {
-		return;
+	private static int fibonacciRecursion(int n) {
+		if (n > 30) {
+			System.out.println("Take it easy. Enter n <= 30");
+			return -1;
+		}
+		if (n == 1) {
+			return 0;
+		}
+		if (n == 2) {
+			return 1;
+		}
+		return(fibonacciRecursion(n-1) + fibonacciRecursion(n-2));
 	}
 
 	/**
@@ -16,6 +26,10 @@ public class FibonacciSeries {
 	 * @return the nth Term of fibonacci series
 	 */
 	private static int fibonacciIterative(int n) {
+		if (n > 30) {
+			System.out.println("Take it easy. Enter n <= 30");
+			return -1;
+		}
 		if (n < 3) {
 			if (n == 1) {
 				return 0;
@@ -35,9 +49,11 @@ public class FibonacciSeries {
 	}
 
 	public static void main(String[] args) {
-		int n = 8;
-		fibonacciRecursion(n);
-		System.out.println("Fibonacci value of " + n + "th term is - " + fibonacciIterative(n));
+		int n = 59;		
+		System.out.println("Recursive Fibonacci value of " + n + "th term is - " +fibonacciRecursion(n));
+		System.out.println("Iterative Fibonacci value of " + n + "th term is - " + fibonacciIterative(n));
 	}
 
 }
+//Time complexity O(n) and Space complexity O(1)
+//For recursive we will have space complexity as O(n)
