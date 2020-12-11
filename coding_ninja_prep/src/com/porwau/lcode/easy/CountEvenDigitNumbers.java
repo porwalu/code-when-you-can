@@ -37,7 +37,7 @@ public class CountEvenDigitNumbers {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] nums = { 1 };
+		int[] nums = { 1,22,3,24 };
 		int countOfNum = countEven(nums);
 		if (countOfNum != -1) {
 			System.out.println("Count of Even number in " + Arrays.toString(nums) + " is " + countEven(nums));
