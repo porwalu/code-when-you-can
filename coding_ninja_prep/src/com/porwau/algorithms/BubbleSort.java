@@ -60,3 +60,4 @@ public class BubbleSort {
 	}
 }
 //Time complexity O(n^2) and Space complexity O(1)
+//Base case complexity in case of sorted array and if we use a flag is O(n)

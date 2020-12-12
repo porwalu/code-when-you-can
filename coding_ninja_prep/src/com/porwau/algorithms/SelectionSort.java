@@ -62,3 +62,4 @@ public class SelectionSort {
 }
 
 //Time complexity is O(n^2) and Space complexity is O(1)
+//Best case complexity of selection sort is also O(n^2)
