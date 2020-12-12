@@ -19,7 +19,8 @@ public class SelectionSort {
 	}
 
 	/**
-	 * @param intArr
+	 * @param intArr - integer array to be sorted in ascending order using Selection
+	 *               Sort
 	 */
 	private static void selectionSortAscending(int[] intArr) {// 3,2,5,6,1
 		int arrLen = intArr.length;
@@ -38,6 +39,10 @@ public class SelectionSort {
 		return;
 	}
 
+	/**
+	 * @param intArr - integer array to be sorted in descending order using
+	 *               Selection Sort
+	 */
 	private static void selectionSortDescending(int[] intArr) {// 3,2,5,6,1
 		int arrLen = intArr.length;
 		for (int i = 0; i < arrLen; i++) {
@@ -55,3 +60,5 @@ public class SelectionSort {
 		return;
 	}
 }
+
+//Time complexity is O(n^2) and Space complexity is O(1)
