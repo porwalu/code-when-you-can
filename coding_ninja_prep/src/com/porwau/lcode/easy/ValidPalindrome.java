@@ -1,7 +1,19 @@
 package com.porwau.lcode.easy;
 
+/**
+ * It returns boolean when the input string is a palindrome.
+ * Palindrome - is a string which reads same in both direction.
+ * Ignoring non alphanumeric chars for palindrome validation
+ * 
+ * @author Utkarsh Porwal
+ *
+ */
 public class ValidPalindrome {
 
+	/**
+	 * @param s - String
+	 * @return - true/false depepnding on if String is Palindrome.
+	 */
 	private static boolean isPalindrome(String s) {
 		// 1. replace all non alphanumeric
 		// 2. split into two using mid point.
