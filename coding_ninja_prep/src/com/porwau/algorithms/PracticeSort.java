@@ -19,25 +19,25 @@ public class PracticeSort {
 		return intArr;
 	}
 
-	private static int[] selectionSort(int[] intArr) {//Find the smallest in one iteration and swap with 
-	//leftside elements
+	private static int[] selectionSort(int[] intArr) {// Find the smallest in one iteration and swap with
+		// leftside elements
 		int arrLen = intArr.length;
 		for (int i = 0; i < arrLen; i++) {
 			int minIndex = i;
 			int tmp = intArr[i];
-			for (int j = i+1; j < arrLen; j++) {
+			for (int j = i + 1; j < arrLen; j++) {
 				if (intArr[j] < intArr[minIndex]) {
 					minIndex = j;
-				}				
+				}
 			}
 			intArr[i] = intArr[minIndex];
-			intArr[minIndex]=tmp;
+			intArr[minIndex] = tmp;
 		}
 		return intArr;
 	}
 
-	private static int[] insertionSort(int[] intArr) {//sorted vs unsorted space
-		
+	private static int[] insertionSort(int[] intArr) {// sorted vs unsorted space
+
 		return intArr;
 	}
 
