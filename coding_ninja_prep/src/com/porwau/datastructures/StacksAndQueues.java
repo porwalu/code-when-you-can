@@ -3,6 +3,11 @@ package com.porwau.datastructures;
 import java.util.Queue;
 import java.util.Stack;
 
+/**
+ * Employee details 
+ * @author Utkarsh Porwal
+ *
+ */
 class Employee {
 	public Employee(String fName, String lName, int id) {
 		firstName = fName;
@@ -13,13 +18,18 @@ class Employee {
 	String firstName;
 	String lastName;
 	int employeeID;
-
+	@Override
 	public String toString() {
 		return firstName + " " + lastName + " " + employeeID;
 
 	}
 }
 
+/**
+ * Implementing Stack with array
+ * @author Utkarsh Porwal
+ *
+ */
 class StackWithArray {
 	private int tos;// tos = 0 means empty Array
 	private Employee[] intArr;
@@ -28,6 +38,10 @@ class StackWithArray {
 		intArr = new Employee[capacity];
 	}
 
+	/**
+	 * @return Employee object at the top and 
+	 * <br> also decrements the top and changes the top element to null
+	 */
 	Employee pop() {
 		if (tos == 0) {
 			System.out.println("Array is empty. Can't pop");
@@ -40,6 +54,9 @@ class StackWithArray {
 		}
 	}
 
+	/**
+	 * @param push an employee to the stack
+	 */
 	void push(Employee e) {
 		if (tos == intArr.length) {
 			System.out.println("Array is full. Creating new Array with double capacity");
@@ -55,6 +72,9 @@ class StackWithArray {
 		}
 	}
 
+	/**
+	 * @return the top most employee details I am peeking into or null if stack is empty
+	 */
 	Employee peek() {
 		if (tos != 0) {
 			return intArr[tos - 1];
@@ -64,6 +84,10 @@ class StackWithArray {
 
 }
 
+/**
+ * @author porwau
+ *
+ */
 public class StacksAndQueues {
 	public static void main(String[] args) {
 		// Stack intStack = new Stack();
