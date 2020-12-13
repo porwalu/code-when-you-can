@@ -3,8 +3,19 @@ package com.porwau.algorithms;
 //Sort in Ascending
 import java.util.Arrays;
 
+/**
+ * This class shows usage of elementary sorting algorithms -selection, bubble &
+ * insertion sort.
+ * 
+ * @author Utkarsh Porwal
+ *
+ */
 public class PracticeSort {
 
+	/**
+	 * @param intArr - array to sort in ascending order using bubbleSort
+	 * @return - sorted array
+	 */
 	private static int[] bubbleSort(int[] intArr) {// Bubble Up
 		int arrLen = intArr.length;
 		for (int i = 0; i < arrLen; i++) {
@@ -19,6 +30,10 @@ public class PracticeSort {
 		return intArr;
 	}
 
+	/**
+	 * @param intArr - array to sort in ascending order using selectionSort
+	 * @return - sorted array
+	 */
 	private static int[] selectionSort(int[] intArr) {// Find the smallest in one iteration and swap with
 		// leftside elements
 		int arrLen = intArr.length;
@@ -36,8 +51,21 @@ public class PracticeSort {
 		return intArr;
 	}
 
+	/**
+	 * @param intArr - array to sort in ascending order using insertionSort
+	 * @return - sorted array
+	 */
 	private static int[] insertionSort(int[] intArr) {// sorted vs unsorted space
-
+		int arrLen = intArr.length;
+		for (int i = 0; i < arrLen; i++) {
+//			int unsortedIndex = i+1;
+			int numberToCompare = intArr[i];
+			int j;
+			for (j = i; j > 0 && intArr[j - 1] > numberToCompare; j--) {
+				intArr[j] = intArr[j - 1];
+			}
+			intArr[j] = numberToCompare;
+		}
 		return intArr;
 	}
 
