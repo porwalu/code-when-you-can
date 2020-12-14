@@ -51,7 +51,6 @@ public class FibonacciSeries {
 
 	public static void main(String[] args) {
 		int n = 5;		
-		System.out.println((char)('a'+1));
 		System.out.println("Recursive Fibonacci value of " + n + "th term is - " +fibonacciRecursion(n));
 //		System.out.println("Iterative Fibonacci value of " + n + "th term is - " + fibonacciIterative(n));
 	}
