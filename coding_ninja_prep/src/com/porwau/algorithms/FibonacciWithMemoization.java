@@ -5,23 +5,33 @@ import java.util.HashMap;
 /**This class calculates the nth term of Fibonacci series
  * Example of Fibonacci series - 0, 1, 1, 2, 3, 5, 8, 13, 21, 34...
  * T(N)=T(N-1)+T(N-2)
+ * This is an excellen example of recursion and memoization or caching
+ * This is performance centric and doesnt make repeated calls.
  * @author Utkarsh Porwal
+ *
+ */
+/**
+ * @author porwau
  *
  */
 public class FibonacciWithMemoization {
 
-	private static int fibonacciRecursion(int n, HashMap<Integer, Integer> hm) {
+	/**
+	 * @param Takes in the n of terms in fibonacci series
+	 * @param hm - hashmap which acts like a cache
+	 * @return - the number at nth place in fibonacci series.
+	 */
+	private static Long fibonacciRecursion(int n, HashMap<Integer, Long> hm) {
 		int i;
-		if (n > 30) {
+		if (n > 100) {
 			System.out.println("Take it easy. Enter n <= 30");
-			return -1;
+			return -1L;
 		}
 		if (n < 2) {
-			return n;
+			return (long) n;
 		}
 		if(hm.containsKey(n)) {
 			System.out.println("Key is present - " + n);
-			System.out.println("Value is present - " + hm.get(n));
 			return hm.get(n);
 		}
 		else {
@@ -32,9 +42,8 @@ public class FibonacciWithMemoization {
 	}
 
 	public static void main(String[] args) {
-		int n = 23;		
-		HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();
-
+		int n = 100;		
+		HashMap<Integer, Long> hm = new HashMap<Integer, Long>();
 		System.out.println("Recursive Fibonacci value of " + n + "th term is - " +fibonacciRecursion(n,hm));
 	}
 
