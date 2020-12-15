@@ -48,5 +48,5 @@ public class FibonacciWithMemoization {
 	}
 
 }
-//Time complexity O(n) and Space complexity O(1)
+//Time complexity O(n) - memoization optimizes complexity from O(2^n) to O(n)
 //For recursive we will have space complexity as O(n)
