@@ -20,8 +20,16 @@ class Node {
 	public Node() {
 		System.out.println("Hello Head");
 	}
+	public Node getNext(Node n) {
+		return n.next;
+	}
 }
 
+/**
+ * This implementation adds and removes  the first element after head .
+ * @author Utkarsh Porwal
+ *
+ */
 class SinglyLinkedList {
 	public SinglyLinkedList() {
 		head = new Node();
@@ -32,34 +40,32 @@ class SinglyLinkedList {
 	/**
 	 * Removes the node after Head in a linked list.
 	 */
-	public void removeAfterHead() {
+	public void remove() {
 		head.next = head.next.next;
 	}
 
 	/**
 	 * @param data - data to be added in linked list
 	 */
-	public void addAfterHead(int data) {
+	public void add(int data) {
 		Node n = new Node(data);
 		n.next = head.next;
 		head.next = n;
 	}
 
 	/**
-	 *Override toString to display content of LinkedList.
+	 *printList() method to Override toString to display content of LinkedList.
 	 */
-	public String toString() {
-		Node n = head.next;
+	public void printList() {
+		Node currNode = head.next;
 		System.out.println("");
 
 		System.out.print("Linked list is - ");
 
-		while (n != null) {
-			// s = s + String.valueOf(n.data);
-			System.out.print("[" + n.data + "]");
-			n = n.next;
+		while (currNode != null) {
+			System.out.print("[" + currNode.data + "]");
+			currNode = currNode.next;
 		}
-		return "";
 	}
 
 }
@@ -73,12 +79,12 @@ class SinglyLinkedList {
 public class SinglyLinkedListImplementation {
 	public static void main(String[] args) {
 		SinglyLinkedList sll = new SinglyLinkedList();
-		sll.addAfterHead(2);
-		sll.addAfterHead(3);
-		sll.addAfterHead(4);
-		sll.toString();
-		sll.removeAfterHead();
-		sll.toString();
+		sll.add(2);
+		sll.add(3);
+		sll.add(4);
+		sll.printList();
+		sll.remove();
+		sll.printList();
 	}
 
 }
