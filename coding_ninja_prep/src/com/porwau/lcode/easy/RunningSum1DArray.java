@@ -4,7 +4,8 @@ import java.util.Arrays;
 
 /**
  * @author Utkarsh Porwal
- *
+ *LC - 1480. Running Sum of 1d Array
+
  */
 public class RunningSum1DArray {
 

@@ -10,7 +10,7 @@ public class DefangIP {
 
     /**
      * @param address - IP address in string form
-     * @return - - Defanged IP in char array
+     * @return - - Defanged IP in String format.
 
      */
     private static String defangIPaddr(String address) {
