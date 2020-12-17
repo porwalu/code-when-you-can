@@ -68,6 +68,18 @@ class SinglyLinkedList {
 		}
 	}
 
+	public void reverse() {
+		Node prev = null;
+		Node curr = head.next;
+		Node next = null;
+		while(curr !=null) {
+			next = curr.next;
+			curr.next = prev;	
+			prev=curr;
+			curr = next;
+		}
+		head.next = prev;
+	}
 }
 
 /**
@@ -83,8 +95,10 @@ public class SinglyLinkedListImplementation {
 		sll.add(3);
 		sll.add(4);
 		sll.printList();
-		sll.remove();
+		sll.reverse();
 		sll.printList();
-	}
+		sll.add(4);
+		sll.printList();
 
+	}
 }
