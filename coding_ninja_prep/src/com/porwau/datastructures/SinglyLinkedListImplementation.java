@@ -107,16 +107,18 @@ class SinglyLinkedList {
 		return length;
 	}
 
-	public void setLength() {
+	public void increaseLength() {
 		length++;
 	}
-	public void redLength() {
+
+	public void reduceLength() {
 		length--;
 	}
 
 	/**
-	 * Add an element at specific index. 
-	 * If there is already an element at index that is sifted to the right. 
+	 * Add an element at specific index. If there is already an element at index
+	 * that is sifted to the right.
+	 * 
 	 * @param index - index to insert record at.
 	 * @param data  - data to insert
 	 * @return - true if insert is successful else false
@@ -130,23 +132,28 @@ class SinglyLinkedList {
 			Node insert = new Node(data);
 			Node curr = head;
 			Node prev = null;
-		if (index == 0) {
-			head.next=insert;
-			insert.next=null;
-		}else {
-			int i = 0;
-			while (i != (index )) {
-				prev = curr;
-				curr = curr.next;
-				i++;
+			if (index == 0) {
+				head.next = insert;
+				insert.next = null;
+			} else {
+				int i = 0;
+				while (i != (index)) {
+					prev = curr;
+					curr = curr.next;
+					i++;
+				}
+				insert.next = curr;
+				prev.next = insert;
 			}
-			insert.next = curr;
-			prev.next=insert;
-		}
-			setLength();
+			increaseLength();
 			return true;
 		}
 	}
+
+	/**
+	 * @param index - remove an element at index
+	 * @return - true if removed else false
+	 */
 	public boolean removeAtIndex(int index) {
 		if (index <= 0 || index >= length) {
 			System.out.println(index + " is invalid index. Valid index range for this LinkedList is from 1 - "
@@ -156,13 +163,13 @@ class SinglyLinkedList {
 		Node curr = head;
 		Node prev = null;
 		int i = 0;
-		while(i != index) {
-			prev =curr;
+		while (i != index) {
+			prev = curr;
 			curr = curr.next;
 			i++;
 		}
-		prev.next=curr.next;
-		redLength();
+		prev.next = curr.next;
+		reduceLength();
 		return true;
 	}
 }
