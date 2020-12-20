@@ -29,16 +29,18 @@ class DoublyLinkedList<Integer> {
 
 	private Node head;
 	private Node tail;
-	// private int data;
-	private int length;
+	private int size;
 
+	/**
+	 * @param data - data to be added
+	 * @return - boolean if successful
+	 */
 	boolean addNode(int data) {// Just after head.
 		Node newNode = new Node(data);
 
 		if (head == null) {
 			System.out.println("First ever node");
 			head = newNode;
-			// head.data=data;
 			head.next = null;
 			head.prev = null;
 			tail = head;
@@ -53,7 +55,7 @@ class DoublyLinkedList<Integer> {
 			head.next = newNode;
 			newNode.prev = head;
 		}
-
+		size++;
 		return true;
 	}
 
@@ -68,7 +70,7 @@ class DoublyLinkedList<Integer> {
 			System.out.print("[" + curr.data + "]");
 			curr = curr.next;
 		}
-		System.out.println();
+		System.out.println(", size is  - " + this.size);
 	}
 }
 
