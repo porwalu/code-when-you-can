@@ -24,8 +24,8 @@ public class TwoSum {
 		}
 
 		for (int i = 0; i < arrNum.length; i++) {
-			if (hm.containsKey(target - arrNum[i]) && (int)hm.get(target - arrNum[i]) != i) {
-				return new int[] { i, (int) hm.get(target - arrNum[i]) };
+			if (hm.containsKey(arrNum[i]) && (int)hm.get(arrNum[i]) != i) {
+				return new int[] { i, (int) hm.get(arrNum[i]) };
 				// hm.get()
 			}
 		}
@@ -34,9 +34,9 @@ public class TwoSum {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] arrNum = { 3, 1 };
-		int target = 6;
-		System.out.println("Two sum which gives " + target + " is " + Arrays.toString(twoSum(arrNum, target)));
+		int[] arrNum = { 2,7,11,15 };
+		int target = 9;
+	//	System.out.println("Two sum which gives " + target + " is " + Arrays.toString(twoSum(arrNum, target)));
 		System.out.println("Two sum which gives " + target + " is " + Arrays.toString(twoSumOptimized(arrNum, target)));
 
 	}
