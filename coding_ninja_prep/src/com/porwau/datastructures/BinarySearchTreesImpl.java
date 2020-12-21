@@ -31,6 +31,12 @@ class BinarySearchTree {
 			this.data = data;
 		}
 
+		/**
+		 * insert the value in the binary search tree.
+		 * 
+		 * @param value to insert.
+		 * 
+		 */
 		public void insert(int value) {
 			if (value == data) {
 				return;
@@ -80,6 +86,9 @@ class BinarySearchTree {
 			this.right = right;
 		}
 
+		/**
+		 * this is traverse method of the node.
+		 */
 		public void traverseInOrder() {
 			if (left != null) {
 				left.traverseInOrder();
@@ -92,6 +101,9 @@ class BinarySearchTree {
 
 	}
 
+	/**
+	 * this is invoked on the tree but calls the traverseInOrder of the node.
+	 */
 	public void traverseInOrder() {
 		if (root != null) {
 			root.traverseInOrder();// method is called on the node.
