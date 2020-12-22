@@ -159,6 +159,15 @@ class BinarySearchTree {
 		// 2. node has 1 child
 		// 3. node has 2 children
 		public boolean delete(int value) {
+			if (value > data) {//check on RHS
+				right.delete(value);
+			}else if (value < data){//check on LHS
+				left.delete(value);	
+			} else {
+				if(left == null && right == null) {
+					
+				}
+			}
 			return false;
 		}
 	}
@@ -203,7 +212,7 @@ class BinarySearchTree {
 
 	public boolean delete(int value) {
 		if (root == null) {
-			System.out.println("Empty tree!! Min value can't be obtained.");
+			System.out.println("Empty tree!! Value can't be deleted.");
 			return false;
 		} else {
 			return root.delete(value);
