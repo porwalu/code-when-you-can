@@ -219,6 +219,10 @@ class BinarySearchTree {
 		}
 	}
 
+	/**
+	 * @param value - value to lookup in Binary Search tree
+	 * @return - true if lookup works else false
+	 */
 	public boolean lookup(int value) {
 		TreeNode currNode = root;
 		while (currNode != null) {
