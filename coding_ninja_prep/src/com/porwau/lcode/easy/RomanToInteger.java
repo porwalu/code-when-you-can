@@ -14,16 +14,7 @@ package com.porwau.lcode.easy;
 public class RomanToInteger {
 
 	public static void main(String[] args) {
-//		String roman = "MCMXCIV";
-//		roman = roman.replaceAll("IV", "4");
-//		roman = roman.replaceAll("IX", "9");
-//		roman = roman.replaceAll("XL", "40");
-//		roman = roman.replaceAll("XC", "90");
-//		roman = roman.replaceAll("CD", "400");
-//		roman = roman.replaceAll("CM", "900");
-//		
-//		System.out.println(roman);
-		String roman1 = "MCMXCIV";
+		String roman1 = "DCXXI";
 		System.out.println(roman1);
 
 		System.out.println("Integer value for Roman " + roman1 + " is " + romanToIntger(roman1));
@@ -32,33 +23,40 @@ public class RomanToInteger {
 	private static int romanToIntger(String roman) {
 		int number = 0;
 		for (int i = 0; i < roman.length(); i++) {
-			if (roman.charAt(i) == 'I') {
-				if (roman.charAt(i + 1) == 'V') {
-					number = number + 4;
-					i++;
-				} else if (roman.charAt(i + 1) == 'X') {
-					number = number + 9;
-					i++;
+			if (!(roman.length() == i + 1)) {
+				if (roman.charAt(i) == 'I') {
+					if (roman.charAt(i + 1) == 'V') {
+						number = number + 4;
+						i++;
+						continue;
+					} else if (roman.charAt(i + 1) == 'X') {
+						number = number + 9;
+						i++;
+						continue;
+					}
+
+				} else if (roman.charAt(i) == 'X') {
+					if (roman.charAt(i + 1) == 'L') {
+						number = number + 40;
+						i++;
+						continue;
+					} else if (roman.charAt(i + 1) == 'C') {
+						number = number + 90;
+						i++;
+						continue;
+					}
+
+				} else if (roman.charAt(i) == 'C') {
+					if (roman.charAt(i + 1) == 'D') {
+						number = number + 400;
+						i++;
+						continue;
+					} else if (roman.charAt(i + 1) == 'M') {
+						number = number + 900;
+						i++;
+						continue;
+					}
 				}
-				continue;
-			} else if (roman.charAt(i) == 'X') {
-				if (roman.charAt(i + 1) == 'L') {
-					number = number + 40;
-					i++;
-				} else if (roman.charAt(i + 1) == 'C') {
-					number = number + 90;
-					i++;
-				}
-				continue;
-			} else if (roman.charAt(i) == 'C') {
-				if (roman.charAt(i + 1) == 'D') {
-					number = number + 400;
-					i++;
-				} else if (roman.charAt(i + 1) == 'M') {
-					number = number + 900;
-					i++;
-				}
-				continue;
 			}
 			System.out.println(romanValue(roman.charAt(i)));
 			number = number + romanValue(roman.charAt(i));
