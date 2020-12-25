@@ -1,7 +1,8 @@
 package com.porwau.lcode.medium;
 
 /**
- * Uses recursion. find half number recursively. complexity in O(logn)
+ * 50. Pow(x, n)
+ * * Uses recursion. find half number recursively. complexity in O(logn)
  * 
  * @author Utkarsh Porwal
  *
@@ -31,15 +32,11 @@ public class PowerFunction {
 			x = 1 / x;
 			N = -N;
 		}
-
 		return fastPow(x, N);
 	}
-
 	public static void main(String[] args) {
 		double number = 2.0;
 		int power = 2;
 		System.out.println(number + " raised to the power of " + power + " is " + myPow(number, power));
-
 	}
-
 }
