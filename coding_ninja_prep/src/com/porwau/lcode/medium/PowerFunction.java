@@ -1,19 +1,38 @@
 package com.porwau.lcode.medium;
 
+/**
+ * Uses recursion. find half number recursively. complexity in O(logn)
+ * 
+ * @author Utkarsh Porwal
+ *
+ */
 public class PowerFunction {
 
+	/**
+	 * @param x - number
+	 * @param n - power
+	 * @return - number ^ power
+	 */
+	private static double fastPow(double x, long n) {
+		if (n == 0) {
+			return 1.0;
+		}
+		double half = fastPow(x, n / 2);
+		if (n % 2 == 0) {
+			return half * half;
+		} else {
+			return half * half * x;
+		}
+	}
+
 	private static double myPow(double x, int n) {
-		double num = 1;
-		boolean negative = false;
-		if (n < 0) {
-			negative = true;
-			n = -n;
+		long N = n;
+		if (N < 0) {
+			x = 1 / x;
+			N = -N;
 		}
-		for (int i = 1; i <= n / 2; i++) {
-			num = num * x;
-		}
-		num = n % 2 == 1 ? num * num * x : num * num;
-		return negative == false ? num : 1 / num;
+
+		return fastPow(x, N);
 	}
 
 	public static void main(String[] args) {
