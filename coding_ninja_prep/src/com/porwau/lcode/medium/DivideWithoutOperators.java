@@ -1,5 +1,11 @@
-package com.porwau.lcode.easy;
+package com.porwau.lcode.medium;
 
+/**
+ * Divide two integers without operators
+ * 
+ * @author Utkarsh Porwal
+ *
+ */
 public class DivideWithoutOperators {
 
 	public static void main(String[] args) {
@@ -26,6 +32,7 @@ public class DivideWithoutOperators {
 		boolean dividendNegative = false;
 		boolean dividendMin = false;
 
+		System.out.println("absolute value is " + Math.abs(-100));
 		if (dividend == Integer.MIN_VALUE) {
 			dividendMin = true;
 		}
