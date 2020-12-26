@@ -9,6 +9,10 @@ package com.porwau.lcode.easy;
  */
 public class LongestCommonPrefix {
 
+	/**
+	 * @param strings - array of words to check for longest common prefix
+	 * @return - longest common prefix
+	 */
 	private static String findPrefix(String[] strings) {
 		if (strings.length == 0) {
 			return "";
