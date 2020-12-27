@@ -15,18 +15,17 @@ public class DivideWithoutOperators {
 	private static int HALF_INT_MIN = -1073741824;// -2**30;
 
 	public static void main(String[] args) {
-		int dividend = 21;
+		int dividend = 13;
 		int divisor = 2;
 
-		System.out.println("Quotient of division is " + divide(dividend, divisor));
-		System.out.println("Quotient of division is " + fastdivide(dividend, divisor));
-		System.out.println("Quotient of division is " + fasterdivide(dividend, divisor));
-		System.out.println("Quotient of division is " + fasterdividebit(dividend, divisor));
+		System.out.println("Quotient of division by divide is " + divide(dividend, divisor));
+		System.out.println("Quotient of division fastdivide is " + fastdivide(dividend, divisor));
+		System.out.println("Quotient of division fasterdivide is " + fasterdivide(dividend, divisor));
+		System.out.println("Quotient of division fasterdividebit is " + fasterdividebit(dividend, divisor));
 
 	}
 
 	private static int fasterdividebit(int dividend, int divisor) {
-		
 		if (dividend == 0 || divisor == 1) {
 			return dividend;
 		}
@@ -41,8 +40,28 @@ public class DivideWithoutOperators {
 		if (divisor > 0) {
 			divisor = -divisor;// converting to negative as negative have more range
 		}
+		int powerCount = 1;
+		int doubleCount = divisor;
+		while (divisor + divisor >= dividend) {
+			powerCount += powerCount;// will have the max power
+			doubleCount += doubleCount;// will have the maximum value at the end
+			if (divisor < HALF_INT_MIN) {
+				break;
+			}
+			divisor += divisor;
 
-		return 1;
+		}
+
+		int quotient = 0;
+		while (doubleCount >= dividend) {
+			quotient += powerCount;
+			dividend -= doubleCount;
+			doubleCount >>= 1;
+			powerCount >>= 1;
+
+		}
+
+		return sign == -1 ? -quotient : quotient;
 	}
 
 	private static int fasterdivide(int dividend, int divisor) {
