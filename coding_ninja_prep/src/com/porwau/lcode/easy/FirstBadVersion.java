@@ -14,7 +14,7 @@ import java.util.Map;
 public class FirstBadVersion {
 
 	public static void main(String[] args) {
-		int versionCount = 6;
+		int versionCount = 10;
 		System.out.println("First Bad version via linear search is " + findFirstBadLinear(versionCount));
 		System.out.println("First Bad version via binary search is " + findFirstBadLogarithimic(versionCount));
 	}
@@ -23,20 +23,22 @@ public class FirstBadVersion {
 	 * @return -first bad version This will have O(logn) complexity
 	 */
 	private static int findFirstBadLogarithimic(int versionCount) {
-		int mid = versionCount / 2;
-		while (mid != 0) {
+		int left = 1;
+		int right = versionCount;
+		int mid = left +(right-left) / 2;
+		while (left < right) {
 			if (isBadVersion(mid)) {
-				// find mid to the left
-				mid /= 2;
-			} else {
-				if (isBadVersion(mid + 1)) {
-					return mid + 1;
-				} else {
-					mid = (mid + 1 + versionCount) / 2;
-				}
+				// Search left and discard right
+				if(!isBadVersion(mid-1)) {return mid;}
+				right = mid;
+			} else {//Search right, discard left
+				if(!isBadVersion(mid+1)) {return mid +1;}
+
+				left = mid;
 			}
+			mid = left +(right-left) / 2;
 		}
-		return 1;
+		return left;
 	}
 
 	/**
@@ -61,12 +63,14 @@ public class FirstBadVersion {
 		Map<Integer, Character> badMap = new HashMap<>();
 		badMap.put(1, 'G');
 		badMap.put(2, 'G');
-		badMap.put(3, 'B');
-		badMap.put(4, 'B');
+		badMap.put(3, 'G');
+		badMap.put(4, 'G');
 		badMap.put(5, 'B');
 		badMap.put(6, 'B');
 		badMap.put(7, 'B');
 		badMap.put(8, 'B');
+		badMap.put(9, 'B');
+		badMap.put(10, 'B');
 		return badMap.get(version) == 'B' ? true : false;
 	}
 }
