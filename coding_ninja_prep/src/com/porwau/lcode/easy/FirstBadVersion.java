@@ -25,18 +25,14 @@ public class FirstBadVersion {
 	private static int findFirstBadLogarithimic(int versionCount) {
 		int left = 1;
 		int right = versionCount;
-		int mid = left +(right-left) / 2;
 		while (left < right) {
+          int mid = left +(right-left) / 2;//good point
 			if (isBadVersion(mid)) {
 				// Search left and discard right
-				if(!isBadVersion(mid-1)) {return mid;}
 				right = mid;
 			} else {//Search right, discard left
-				if(!isBadVersion(mid+1)) {return mid +1;}
-
-				left = mid;
+				left = mid+1;//this is important else it will become infinite.
 			}
-			mid = left +(right-left) / 2;
 		}
 		return left;
 	}
