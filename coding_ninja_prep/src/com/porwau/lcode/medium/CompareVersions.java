@@ -5,7 +5,7 @@ package com.porwau.lcode.medium;
 //If version1 > version2, return 1.
 //Otherwise, return 0 if equal.
 //All leading zeros are ignored
-//corner cases - no . - 3 and 5, 1.2.3.0 - 1.2.3, 1.2.3 - 1.2.3.0.1
+//corner cases -  1.2.3.0 - 1.2.3, 1.2.3 - 1.2.3.0.1 - 
 
 public class CompareVersions {
 	private static int compare(String v1, String v2) {
@@ -41,14 +41,33 @@ public class CompareVersions {
 		}
 		// 1, 0, -1
 		if (trackRev == 0) {// both split revisions are equal.
-			// length is more and not just zeros return it. else return equal
-			return leftVersionLonger;
+			if(leftVersionLonger == 0) {
+				return 0;
+			}else if(leftVersionLonger == 1) {//check for non zero in left string
+				trackRev = checkNonZeroRev(v1,v2.length);
+			}else {//check for non zero in right string.
+				trackRev = checkNonZeroRev(v2,v1.length);
+			}
+			// length is more and not just zeros then its longer. else return equal
+			//return leftVersionLonger;
+			
 		}
 		return trackRev;
 	}
 
+	private static int checkNonZeroRev(String[] version, int length) {
+		// TODO Auto-generated method stub
+		for(int i = length;i<version.length;i++) {
+			
+			if(Integer.parseInt(version[i].replaceAll("^0+(?!$)", "")) > 0){
+				return 1;
+			}
+		}
+		return 0;
+	}
+
 	public static void main(String[] args) {
-		String version1 = "7.5.2.4";
+		String version1 = "7.5.3.4";
 		String version2 = "7.5.3";
 		System.out.println(compareVer(version1, version2));
 
