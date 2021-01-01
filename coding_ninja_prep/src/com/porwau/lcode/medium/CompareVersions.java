@@ -22,7 +22,7 @@ public class CompareVersions {
 		for (int i = 0; i < Math.max(l1, l2); i++) {
 			int rev1, rev2;
 			rev1 = i < l1 ? Integer.parseInt(v1[i]) : 0;
-			rev2 = i < l2 ? Integer.parseInt(v1[i]) : 0;
+			rev2 = i < l2 ? Integer.parseInt(v2[i]) : 0;
 			if (rev1 != rev2) {//ignore the equal revision
 				return rev1 > rev2 ? 1 : -1;//at any stage we get larger revision, return the decission
 			}
