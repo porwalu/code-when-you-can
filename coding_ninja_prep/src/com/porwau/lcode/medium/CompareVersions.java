@@ -23,11 +23,11 @@ public class CompareVersions {
 			int rev1, rev2;
 			rev1 = i < l1 ? Integer.parseInt(v1[i]) : 0;
 			rev2 = i < l2 ? Integer.parseInt(v1[i]) : 0;
-			if (rev1 != rev2) {
-				return rev1 > rev2 ? 1 : -1;
+			if (rev1 != rev2) {//ignore the equal revision
+				return rev1 > rev2 ? 1 : -1;//at any stage we get larger revision, return the decission
 			}
 		}
-		return 0;
+		return 0;//all revs are same at this stage.
 	}
 
 	public static void main(String[] args) {
@@ -36,3 +36,5 @@ public class CompareVersions {
 		System.out.println(compareVer(version1, version2));
 	}
 }
+//Time complexity of O(N + M +Max(N,M) - split uses linear complexity
+//Space - O(N+M) - creating arrays.
