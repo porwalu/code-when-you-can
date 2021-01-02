@@ -1,5 +1,10 @@
 package com.porwau.lcode.easy;
 
+/**
+ * LC - 69. Sqrt(x)
+ * @author Utkarsh porwal
+ *
+ */
 public class SqaureRoot {
 
 	public static void main(String[] args) {
