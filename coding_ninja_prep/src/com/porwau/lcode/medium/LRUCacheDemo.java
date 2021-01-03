@@ -12,8 +12,11 @@ import java.util.HashMap;
 public class LRUCacheDemo {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		LRUCache lc1 = new LRUCache(2);
+		System.out.println("Getting value for " + lc1.get(2));
+		lc1.set(1, 1);
+		lc1.set(2, 2);
+		System.out.println("Getting value for " + lc1.get(2));
 	}
 }
 class LRUCache{
@@ -30,10 +33,12 @@ class LRUCache{
 
 
 	public int get(int key) {
-		return cache.get(key);
+		//if exists in map
+		return cache.containsKey(key) == true ? cache.get(key) : -1;
 	}
 
 	public void set(int key, int value) {
+		//check for capacity before putting
 		cache.put(key, value);
 	}
 	
