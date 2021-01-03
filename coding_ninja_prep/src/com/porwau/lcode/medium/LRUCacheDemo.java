@@ -1,10 +1,13 @@
 package com.porwau.lcode.medium;
 
 import java.util.Map;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 /**
- * Least Recently Used Cache. Here we evict the data which is oldest.
+ * 146. LRU Cache Least Recently Used Cache. Here we evict the data which is
+ * oldest.
  * 
  * @author Utkarsh Porwal
  *
@@ -13,53 +16,34 @@ public class LRUCacheDemo {
 
 	public static void main(String[] args) {
 		LRUCache lc1 = new LRUCache(2);
-		System.out.println("Getting value for  " + lc1.get(2));
-		lc1.set(1, 1);
-		lc1.set(2, 2);
-		System.out.println("Getting value for " + lc1.get(2));
-		lc1.set(2, 3);
-		System.out.println("Getting value for " + lc1.get(2));
-		lc1.set(3, 3);
+		lc1.put(1, 1);
+		lc1.put(2, 2);
+		System.out.println(lc1.getOrDefault(1, -1));
+		System.out.println(lc1.getOrDefault(2, -1));
+		System.out.println("size " + lc1.size());
+		lc1.put(3, 3);
+		System.out.println("size " + lc1.size());
 
+		System.out.println(lc1.getOrDefault(3, -1));
+		System.out.println(lc1.getOrDefault(1, -1));
 
 	}
 }
-class LRUCache{
+
+class LRUCache extends LinkedHashMap<Integer, Integer> {
 	private int capacity;
-	Map <Integer,Integer> cache = new HashMap<>();
+
+	LRUCache(int capacity) {
+		super(capacity, .75F, true);
+		this.capacity = capacity;
+	}
 
 	public int getCapacity() {
 		return capacity;
 	}
 
-	public void setCapacity(int capacity) {
-		this.capacity = capacity;
+	@Override
+	protected boolean removeEldestEntry(Map.Entry<Integer, Integer> eldest) {
+		return size() > capacity;
 	}
-
-
-	public int get(int key) {
-		//if exists in map
-		return cache.containsKey(key) == true ? cache.get(key) : -1;
-	}
-
-	public void set(int key, int value) {
-		//check if key exists update value
-		if(cache.containsKey(key)) {
-			cache.put(key, value);
-			return;
-		}
-		
-		//check for capacity before putting
-		if(cache.size() == capacity) {
-			System.out.println("Cache is full. Need to be evicted");
-			return;
-		}
-		cache.put(key, value);
-	}
-	
-
-	LRUCache(int capacity){
-		this.capacity = capacity;
-	}
-	
 }
