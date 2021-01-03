@@ -1,9 +1,7 @@
 package com.porwau.lcode.medium;
 
-import java.util.Map;
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * 146. LRU Cache Least Recently Used Cache. Here we evict the data which is
