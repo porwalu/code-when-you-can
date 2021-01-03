@@ -1,5 +1,6 @@
 package com.porwau.lcode.medium;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -10,6 +11,7 @@ import java.util.Map;
  * @author Utkarsh Porwal
  *
  */
+
 public class LRUCacheDemo {
 
 	public static void main(String[] args) {
@@ -43,5 +45,81 @@ class LRUCache extends LinkedHashMap<Integer, Integer> {
 	@Override
 	protected boolean removeEldestEntry(Map.Entry<Integer, Integer> eldest) {
 		return size() > capacity;
+	}
+}
+
+class LRUCache2 {
+	private int capacity;
+	private int size;
+	Map<Integer, DLinkNode> cache = new HashMap();
+	DLinkNode head, tail;
+
+	class DLinkNode {
+		public DLinkNode(int key, int value) {
+			this.key = key;
+			this.value = value;
+		}
+
+		public DLinkNode() {
+		}
+
+		DLinkNode next;
+		DLinkNode prev;
+		int key;
+		int value;
+	}
+
+	public int get(int key) {
+		// if doesn't exist, return -1, else return value and update the position.
+		DLinkNode node = cache.get(key);
+		if (node == null) {
+			return -1;
+		} else { // return value and update the position.
+			makeLatest(node);
+			return node.key;
+		}
+	}
+
+	private void makeLatest(DLinkNode accessNode) {
+		accessNode.prev.next = accessNode.next;
+		accessNode.next = head.next;
+		head.next = accessNode;
+	}
+
+	public void put(int key, int value) {
+		// if exists
+		DLinkNode node = cache.get(key);
+
+		if (node != null) {
+			node.value = value;// update Node
+			// cache.put(key,cache.get(key) );//update cache.//not needed as we have changed
+			// the node
+			makeLatest(node);
+		} else {// new value
+			DLinkNode newNode = addNode(key, value); // add latest Node
+			cache.put(key, newNode);// update map
+			if (size > capacity)  //  more than capacity
+				// remove the one before tail.
+				cache.remove(tail.prev.key);
+				removeTail(tail.prev);
+			}
+		}
+
+	private DLinkNode addNode(int key, int value) {
+		// TODO Auto-generated method stub
+		DLinkNode newNode = new DLinkNode(key, value);
+		newNode.next = head.next;
+		newNode.prev = head;
+		head.next.prev = newNode;
+		head.next = newNode;
+		++size;
+		return newNode;
+
+	}
+
+	private void removeTail(DLinkNode oldNode) {
+		tail.prev = oldNode.prev;
+		oldNode.prev.next = tail;
+		--size;
 	}
 }
