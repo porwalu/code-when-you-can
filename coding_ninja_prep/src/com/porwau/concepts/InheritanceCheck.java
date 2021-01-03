@@ -1,11 +1,11 @@
 package com.porwau.concepts;
 
 class A{
-	void test() {
+	protected void test() {
 		System.out.println("In Test  A");
 		changeThis();
 	}
-	void changeThis(){
+	protected void changeThis(){
 		System.out.println("Changethis of A");
 	}
 }
@@ -17,6 +17,7 @@ public class InheritanceCheck extends A{
 
 	}
 	@Override
+	protected
 	void changeThis(){
 		System.out.println("Changethis of InheritanceCheck");
 
