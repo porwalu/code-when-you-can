@@ -13,10 +13,15 @@ public class LRUCacheDemo {
 
 	public static void main(String[] args) {
 		LRUCache lc1 = new LRUCache(2);
-		System.out.println("Getting value for " + lc1.get(2));
+		System.out.println("Getting value for  " + lc1.get(2));
 		lc1.set(1, 1);
 		lc1.set(2, 2);
 		System.out.println("Getting value for " + lc1.get(2));
+		lc1.set(2, 3);
+		System.out.println("Getting value for " + lc1.get(2));
+		lc1.set(3, 3);
+
+
 	}
 }
 class LRUCache{
@@ -38,7 +43,17 @@ class LRUCache{
 	}
 
 	public void set(int key, int value) {
+		//check if key exists update value
+		if(cache.containsKey(key)) {
+			cache.put(key, value);
+			return;
+		}
+		
 		//check for capacity before putting
+		if(cache.size() == capacity) {
+			System.out.println("Cache is full. Need to be evicted");
+			return;
+		}
 		cache.put(key, value);
 	}
 	
