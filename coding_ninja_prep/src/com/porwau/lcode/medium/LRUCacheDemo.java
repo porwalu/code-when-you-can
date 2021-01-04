@@ -76,14 +76,17 @@ class LRUCache2 {
 			return -1;
 		} else { // return value and update the position.
 			makeLatest(node);
-			return node.key;
+			return node.value;
 		}
 	}
 
 	private void makeLatest(DLinkNode accessNode) {
 		accessNode.prev.next = accessNode.next;
+		accessNode.next.prev = accessNode.prev;
+		head.next.prev = accessNode;
 		accessNode.next = head.next;
 		head.next = accessNode;
+		accessNode.prev=head;
 	}
 
 	public void put(int key, int value) {
