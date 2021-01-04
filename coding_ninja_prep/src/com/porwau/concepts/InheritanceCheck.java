@@ -5,22 +5,27 @@ class A{
 		System.out.println("In Test  A");
 		changeThis();
 	}
-	protected void changeThis(){
+	 void changeThis(){
 		System.out.println("Changethis of A");
 	}
 }
-public class InheritanceCheck extends A{
+ class B extends A{
+		@Override
+		protected
+		void changeThis(){
+			System.out.println("Changethis of InheritanceCheck");
+
+		}
+}
+public class InheritanceCheck {
 
 	public static void main(String[] args) {
-		A a = new InheritanceCheck();
-		a.test();
-
-	}
-	@Override
-	protected
-	void changeThis(){
-		System.out.println("Changethis of InheritanceCheck");
+		A a = new B();
+	 
+		a.test();//superclass methos will also call overriden method in subclass
 
 	}
 
 }
+
+
