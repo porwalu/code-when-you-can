@@ -33,6 +33,7 @@ public class SerializeDemo {
 		String str = "Hello World!";
 		String objectLoc = "C:\\\\Users\\\\porwau\\\\Desktop\\\\object";
 		Employee e = new Employee("Utkarsh", 25, 101726, "PE");
+		
 		//System.out.println(e);
 		//serialize(str);
 		 serialize(e);
