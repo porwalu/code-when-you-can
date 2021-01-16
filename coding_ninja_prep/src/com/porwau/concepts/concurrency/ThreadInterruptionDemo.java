@@ -20,6 +20,8 @@ public class ThreadInterruptionDemo {
 		MyTask task1 = new MyTask();
 		Thread t1 = new Thread(task1);
 		t1.start();
+		System.out.println("Main Thread finishes");
+
 		
 	}
 
