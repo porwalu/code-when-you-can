@@ -308,6 +308,5 @@ public class BinarySearchTreesImpl {
 				+ (bst.lookup(lookupValue) == true ? "successful" : "not successful"));
 		bst.delete(6);
 		bst.traverseInOrder();
-
 	}
 }
