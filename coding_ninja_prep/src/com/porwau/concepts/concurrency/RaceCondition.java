@@ -31,7 +31,8 @@ public void run(){
      withdraw(90);
            
      long newBalance = getBalance();
-     
+     System.out.println("Interrupted status of " + Thread.currentThread().getName() + " is " + Thread.currentThread().interrupted());
+
      if(newBalance < 0){
          System.out.println("Money overdrawn");
      }
@@ -50,6 +51,15 @@ public class RaceCondition {
      Thread aradhana = new Thread(ad);
      utkarsh.setName("vasu");
      aradhana.setName("aru");
+     System.out.println("Interrupted status of " + Thread.currentThread().getName() + " is " + Thread.currentThread().interrupted());
+     try {
+		Thread.currentThread().sleep(10000);
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+     System.out.println("Interrupted status of " + Thread.currentThread().getName() + " is " + Thread.currentThread().interrupted());
+
      utkarsh.start();
      aradhana.start();
  }
