@@ -22,6 +22,8 @@ public class ThreadInterruptionDemo {
 		t1.start();
 		System.out.println("Is interrupted? " + t1.isInterrupted());
 		t1.interrupt();
+		System.out.println("Is interrupted? " + t1.isInterrupted());
+
 		System.out.println("Main Thread finishes");
 
 	}
