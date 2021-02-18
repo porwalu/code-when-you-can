@@ -5,6 +5,7 @@ class MyTask implements Runnable{
 	@Override
 	public void run() {
 		System.out.println("inside mytask thread");
+		Thread.sleep(10000);
 	}
 }
 public class ThreadInterruptionDemo {
