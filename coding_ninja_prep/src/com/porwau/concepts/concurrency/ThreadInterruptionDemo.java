@@ -23,6 +23,7 @@ public class ThreadInterruptionDemo {
 		System.out.println("Is interrupted? " + t1.isInterrupted());
 		t1.interrupt();
 		System.out.println("Is interrupted? " + t1.isInterrupted());
+		System.out.println("Is interrupted? " + t1.isInterrupted());// the above resets it and this should give false.
 
 		System.out.println("Main Thread finishes");
 
