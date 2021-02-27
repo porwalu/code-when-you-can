@@ -19,11 +19,12 @@ public class FundsManage {
 		setAmount(getAmount() - amount);
 	}
 	
-	public boolean haveEnoughCash(double cashToWithdraw) {
+	public boolean withdrawCash(double cashToWithdraw) {
 		
 		if(getAmount() >= cashToWithdraw) {
-			
-			return getAmount() >= cashToWithdraw;
+			redueCash(cashToWithdraw) ;
+			System.out.println("Successfully withdrawn: " + cashToWithdraw);
+			return true;
 		} else {
 			System.out.println("You don't have enuf money.");
 			return false;
