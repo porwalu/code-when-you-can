@@ -2,7 +2,7 @@ package com.porwau.concepts.concurrency;
 
 class MyTask implements Runnable {
 	@Override
-	public void run() {
+	public void run(){
 		System.out.println("inside mytask thread");
 		try {
 			Thread.sleep(5000);
@@ -10,7 +10,7 @@ class MyTask implements Runnable {
 			System.out.println("MyTask Thread finishes");
 		} catch (InterruptedException e) {
 			System.out.println("Is interrupted? via interupted " + Thread.currentThread().getName() +" " + Thread.interrupted());//gets the interrupt status and resets the flag
-			System.out.println(e.getMessage());
+			throw new RuntimeException("Thread Interrupted");
 		}
 		System.out.println("After catch");
 	}
@@ -23,11 +23,15 @@ public class ThreadInterruptionDemo {
 		Thread t1 = new Thread(task1);
 		t1.start();
 		System.out.println("Is interrupted? " + t1.isInterrupted());
-		t1.interrupt();
+		try {
+			t1.interrupt();
+		}catch(Exception e) {
+			System.out.println("Exit");
+		}
 //		System.out.println("Is interrupted? " + t1.isInterrupted());
 
 
-		t1.interrupted();//gets the interrupt status and resets the flag
+		Thread.interrupted();//gets the interrupt status and resets the flag
 
 //		System.out.println("Is interrupted? " + t1.isInterrupted());
 //		System.out.println("Is interrupted? " + t1.isInterrupted());// 
