@@ -5,7 +5,13 @@ class MyTask implements Runnable{
 	@Override
 	public void run() {
 		System.out.println("inside mytask thread");
-		Thread.sleep(10000);
+		try {
+			Thread.sleep(5000);
+			System.out.println("MyTask Thread finishes");
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
 public class ThreadInterruptionDemo {

@@ -51,14 +51,16 @@ public class RaceCondition {
      Thread aradhana = new Thread(ad);
      utkarsh.setName("vasu");
      aradhana.setName("aru");
-     System.out.println("Interrupted status of " + Thread.currentThread().getName() + " is " + Thread.currentThread().interrupted());
+     Thread.currentThread();
+	System.out.println("Interrupted status of " + Thread.currentThread().getName() + " is " + Thread.interrupted());
      try {
-		Thread.currentThread().sleep(10000);
+		Thread.currentThread().sleep(10000);//it affects the current thread as it is static method.
 	} catch (InterruptedException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
 	}
-     System.out.println("Interrupted status of " + Thread.currentThread().getName() + " is " + Thread.currentThread().interrupted());
+     Thread.currentThread();
+	System.out.println("Interrupted status of " + Thread.currentThread().getName() + " is " + Thread.interrupted());
 
      utkarsh.start();
      aradhana.start();
