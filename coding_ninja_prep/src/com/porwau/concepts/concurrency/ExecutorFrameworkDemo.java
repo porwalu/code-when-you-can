@@ -1,5 +1,6 @@
 package com.porwau.concepts.concurrency;
 
+import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -19,9 +20,10 @@ public class ExecutorFrameworkDemo {
 		
 		int cpuCores = Runtime.getRuntime().availableProcessors();
 		System.out.println("Number of cpu cores are " + cpuCores);
-		ExecutorService service = Executors.newFixedThreadPool(cpuCores);
+	//	ExecutorService service = Executors.newFixedThreadPool(cpuCores);
+		Executor executorA = Executors.newFixedThreadPool(cpuCores);
 		for(int i = 0; i <=100; i++) {			
-			service.execute(new Task2());
+			executorA.execute(new Task2());
 		}
 		System.out.println("Thread name in main is " + Thread.currentThread().getName());
 	}
