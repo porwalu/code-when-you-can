@@ -16,13 +16,8 @@ public class ThreadDemo {
 
 		t.setName("Hello");
 		t.start();// run method is called first.
-		try {
-			Thread.sleep(3000);
-			System.out.println("Main thread is " + Thread.currentThread().getName());
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		//Thread.sleep(3000);
+		System.out.println("Main thread is " + Thread.currentThread().getName());
 		System.out.println("Inside Main");
 
 	}
