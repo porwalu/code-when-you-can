@@ -13,7 +13,7 @@ static int i = 1;
 	}
 	
 }
-public class ExecutorIndexerDemo {
+public class ExecutorFrameworkDemo {
 
 	public static void main(String[] args) {
 		
