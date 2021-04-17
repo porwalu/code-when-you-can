@@ -1,9 +1,12 @@
 package com.porwau.concepts.concurrency;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
+
+import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 
 class Task2 implements Runnable{
@@ -12,6 +15,18 @@ static int i = 1;
 	public void run() {
 		
 		System.out.println("Thread name in Task2 is " + Thread.currentThread().getName() + ", thread total - " + i++);
+		
+	}
+	
+}
+
+class Task3 implements Callable<Integer>{
+static int i = 1;
+	@Override
+	public Integer call() {
+		
+		System.out.println("Thread name in Task2 is " + Thread.currentThread().getName() + ", thread total - " + i++);
+		return null;
 		
 	}
 	
@@ -28,10 +43,14 @@ public class ExecutorFrameworkDemo {
 //			executorA.execute(new Task2());
 //		}
 		ScheduledExecutorService executorB = Executors.newScheduledThreadPool(cpuCores);
-		executorB.schedule(new Task2(), 5, SECONDS);//Calls after 5 seconds.
-		executorB.scheduleAtFixedRate(new Task2(), 5, 2, SECONDS);
-		executorB.scheduleWithFixedDelay(new Task2(), 5, 2, SECONDS);
+//		executorB.schedule(new Task2(), 5, SECONDS);//Calls after 5 seconds.
+//		executorB.scheduleAtFixedRate(new Task2(), 5, 2, SECONDS);
+//		executorB.scheduleWithFixedDelay(new Task2(), 5, 2, SECONDS);
 		System.out.println("Thread name in main is " + Thread.currentThread().getName());
+		
+		ExecutorService serviceC = Executors.newFixedThreadPool(5);
+		
+		Future<Integer> submit = serviceC.submit(new Task3());
 	}
 
 }
