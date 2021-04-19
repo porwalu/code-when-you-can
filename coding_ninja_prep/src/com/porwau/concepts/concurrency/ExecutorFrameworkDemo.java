@@ -1,5 +1,6 @@
 package com.porwau.concepts.concurrency;
 
+import static java.util.concurrent.TimeUnit.SECONDS;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -23,13 +24,13 @@ public class ExecutorFrameworkDemo {
 		System.out.println("Number of cpu cores are " + cpuCores);
 	//	ExecutorService service = Executors.newFixedThreadPool(cpuCores);
 		Executor executorA = Executors.newFixedThreadPool(cpuCores);
-		for(int i = 0; i <=100; i++) {			
-			executorA.execute(new Task2());
-		}
+//		for(int i = 0; i <=100; i++) {			
+//			executorA.execute(new Task2());
+//		}
 		ScheduledExecutorService executorB = Executors.newScheduledThreadPool(cpuCores);
-		executorB.schedule(command, delay, unit);
-		executorB.scheduleAtFixedRate(command, initialDelay, period, unit);
-		executorB.scheduleWithFixedDelay(command, initialDelay, delay, unit);
+		executorB.schedule(new Task2(), 5, SECONDS);//Calls after 5 seconds.
+		executorB.scheduleAtFixedRate(new Task2(), 5, 2, SECONDS);
+//		executorB.scheduleWithFixedDelay(command, initialDelay, delay, unit);
 		System.out.println("Thread name in main is " + Thread.currentThread().getName());
 	}
 
