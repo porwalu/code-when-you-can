@@ -30,7 +30,7 @@ public class ExecutorFrameworkDemo {
 		ScheduledExecutorService executorB = Executors.newScheduledThreadPool(cpuCores);
 		executorB.schedule(new Task2(), 5, SECONDS);//Calls after 5 seconds.
 		executorB.scheduleAtFixedRate(new Task2(), 5, 2, SECONDS);
-//		executorB.scheduleWithFixedDelay(command, initialDelay, delay, unit);
+		executorB.scheduleWithFixedDelay(new Task2(), 5, 2, SECONDS);
 		System.out.println("Thread name in main is " + Thread.currentThread().getName());
 	}
 
