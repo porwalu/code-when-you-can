@@ -28,6 +28,12 @@ static int i = 1;
 	public Integer call() {
 		System.out.println("Inside callable's call ");
 		System.out.println("Thread name in Task2 is " + Thread.currentThread().getName() + ", thread total - " + i++);
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return new Random().nextInt();
 		
 	}
@@ -42,7 +48,7 @@ public class ExecutorFrameworkDemo {
 	//	ExecutorService service = Executors.newFixedThreadPool(cpuCores);
 		Executor executorA = Executors.newFixedThreadPool(cpuCores);
 //		for(int i = 0; i <=100; i++) {			
-//			executorA.execute(new Task2());
+//		executorA.execute(new Task2());
 //		}
 		ScheduledExecutorService executorB = Executors.newScheduledThreadPool(cpuCores);
 //		executorB.schedule(new Task2(), 5, SECONDS);//Calls after 5 seconds.
@@ -55,9 +61,13 @@ public class ExecutorFrameworkDemo {
 		Future<Integer> submit = serviceC.submit(new Task3());
 		try {
 			System.out.println("Returned via get : " + submit.get());
+			System.out.println("I am into other things..");
+
 		} catch (InterruptedException | ExecutionException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			serviceC.shutdown();
 		}
 	}
 
