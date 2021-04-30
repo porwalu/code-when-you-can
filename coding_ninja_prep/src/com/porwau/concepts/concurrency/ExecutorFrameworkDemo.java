@@ -2,7 +2,9 @@ package com.porwau.concepts.concurrency;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 
+import java.util.Random;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -26,7 +28,7 @@ static int i = 1;
 	public Integer call() {
 		System.out.println("Inside callable's call ");
 		System.out.println("Thread name in Task2 is " + Thread.currentThread().getName() + ", thread total - " + i++);
-		return null;
+		return new Random().nextInt();
 		
 	}
 	
@@ -51,6 +53,12 @@ public class ExecutorFrameworkDemo {
 		ExecutorService serviceC = Executors.newFixedThreadPool(5);
 		
 		Future<Integer> submit = serviceC.submit(new Task3());
+		try {
+			System.out.println("Returned via get : " + submit.get());
+		} catch (InterruptedException | ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
