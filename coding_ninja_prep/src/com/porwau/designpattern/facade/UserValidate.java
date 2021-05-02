@@ -12,7 +12,7 @@ public class UserValidate {
 
 	public boolean validateUser(String username, String password) {
 		
-		return this.username == username  && this.password == password;
+		return getUsername() == username  && getPassword() == password;
 	}
 	
 
