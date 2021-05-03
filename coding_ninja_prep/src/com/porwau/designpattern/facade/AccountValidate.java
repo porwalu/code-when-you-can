@@ -9,7 +9,7 @@ public class AccountValidate {
 
 	public boolean validateAccount(int accountNumber) {
 
-		return this.accountNumber == accountNumber;
+		return getAccountNumber() == accountNumber;
 	}
 
 }
