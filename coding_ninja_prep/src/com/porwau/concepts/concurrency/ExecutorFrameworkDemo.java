@@ -58,9 +58,9 @@ public class ExecutorFrameworkDemo {
 		
 		ExecutorService serviceC = Executors.newFixedThreadPool(5);
 		
-		Future<Integer> submit = serviceC.submit(new Task3());
+		Future<Integer> future = serviceC.submit(new Task3());
 		try {
-			System.out.println("Returned via get : " + submit.get());
+			System.out.println("Returned via get : " + future.get());
 			System.out.println("I am into other things..");
 
 		} catch (InterruptedException | ExecutionException e) {
@@ -68,6 +68,7 @@ public class ExecutorFrameworkDemo {
 			e.printStackTrace();
 		}finally {
 			serviceC.shutdown();
+			serviceC.shutdownNow();
 		}
 	}
 
