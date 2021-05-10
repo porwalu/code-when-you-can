@@ -5,14 +5,11 @@ public class BankingFacade {
 	private int accountNum;
 	private String username;
 	private String password;
-	private double balance;
 	public BankingFacade(int accountNum, String username, String password) {
 		super();
 		this.accountNum = accountNum;
 		this.username = username;
 		this.password = password;
-		this.balance = 100.00;
-		validateLogin();
 	}
 	private void validateLogin() {
 		// TODO Auto-generated method stub
