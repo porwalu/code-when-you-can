@@ -1,7 +1,7 @@
 package com.porwau.concepts.concurrency;
 
-import static java.util.concurrent.TimeUnit.SECONDS;
-
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -27,7 +27,7 @@ static int i = 1;
 	@Override
 	public Integer call() {
 		System.out.println("Inside callable's call ");
-		System.out.println("Thread name in Task2 is " + Thread.currentThread().getName() + ", thread total - " + i++);
+//		System.out.println("Thread name in Task2 is " + Thread.currentThread().getName() + ", thread total - " + i++);
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
@@ -57,19 +57,29 @@ public class ExecutorFrameworkDemo {
 		System.out.println("Thread name in main is " + Thread.currentThread().getName());
 		
 		ExecutorService serviceC = Executors.newFixedThreadPool(5);
-		
-		Future<Integer> future = serviceC.submit(new Task3());
-		try {
-			System.out.println("Returned via get : " + future.get());
-			System.out.println("I am into other things..");
-
-		} catch (InterruptedException | ExecutionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}finally {
+		List<Future<Integer>> listF = new ArrayList<>();
+		for(int i = 0; i < 5; i++) {
+			Future<Integer> future = serviceC.submit(new Task3());
+			listF.add(future);
+		}
+		int i = 1;
+		for( Future<Integer> f : listF) {
+			
+			try {
+				System.out.println("Returned via get : " + f.get());
+				System.out.println("future # :" +i );
+	
+			} catch (InterruptedException | ExecutionException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			i++;
+		}
 			serviceC.shutdown();
 			serviceC.shutdownNow();
-		}
+		//	System.out.println("future final  :" +i );
+
+	
 	}
 
 }
