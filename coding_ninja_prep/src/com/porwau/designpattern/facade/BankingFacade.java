@@ -10,6 +10,7 @@ public class BankingFacade {
 		this.accountNum = accountNum;
 		this.username = username;
 		this.password = password;
+		
 	}
 	public int getAccountNum() {
 		return accountNum;
