@@ -12,6 +12,11 @@ public class BankingFacade {
 		this.username = username;
 		this.password = password;
 		this.balance = 100.00;
+		validateLogin();
+	}
+	private void validateLogin() {
+		// TODO Auto-generated method stub
+		
 	}
 	public int getAccountNum() {
 		return accountNum;
