@@ -31,11 +31,11 @@ public class BankingFacade {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public void depositMoney(int i) {
+	public void depositMoney(double d) {
 		// TODO Auto-generated method stub
 		
 	}
-	public void withdrawMoney(int i) {
+	public void withdrawMoney(double d) {
 		// TODO Auto-generated method stub
 		
 	}
