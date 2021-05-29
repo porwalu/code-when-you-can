@@ -3,6 +3,9 @@ package com.porwau.lcode.locked;
 import java.util.Arrays;
 
 //167. Two Sum II - Input array is sorted
+// this is add addition to the traditional two sum.
+//Addition is that the array is sorted.
+// space cokmplexity reduced to O(1)
 //Easy
 //O(n) 
 //Space complexity  O(1)
