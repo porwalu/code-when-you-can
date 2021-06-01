@@ -19,15 +19,23 @@ public class FundsManage {
 		setAmount(getAmount() - amount);
 	}
 	
-	public boolean withdrawCash(double cashToWithdraw) {
+	public void withdrawCash(double cashToWithdraw) {
 		
 		if(getAmount() >= cashToWithdraw) {
 			redueCash(cashToWithdraw) ;
 			System.out.println("Successfully withdrawn: " + cashToWithdraw);
-			return true;
+			System.out.println("New balance is: " + getAmount());
 		} else {
-			System.out.println("You don't have enuf money.");
-			return false;
+			System.out.println("You don't have enuf money to withdraw " + cashToWithdraw);
+			System.out.println("Current balance is: " + getAmount());
+
 		}
 	}
+	
+	public void makeDeposit(double cashToDeposit) {
+		addCash(cashToDeposit);
+		System.out.println("Successfully Added: " + cashToDeposit);
+		System.out.println("Current balance is: " + getAmount());
+	}
+	
 }

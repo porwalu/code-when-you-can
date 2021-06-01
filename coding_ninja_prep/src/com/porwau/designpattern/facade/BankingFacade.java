@@ -5,45 +5,53 @@ public class BankingFacade {
 	private int accountNum;
 	private String username;
 	private String password;
+	UserValidate uservalidate;
+	AccountValidate accountValidate;
+	WelcomeMessage wm;
+	FundsManage funds;
+
 	public BankingFacade(int accountNum, String username, String password) {
 		super();
 		this.accountNum = accountNum;
 		this.username = username;
 		this.password = password;
+		wm = new WelcomeMessage();
+		uservalidate = new UserValidate();
+		accountValidate = new AccountValidate();
+		funds = new FundsManage();
 	}
-	private void validateLogin() {
-		// TODO Auto-generated method stub
-		
-	}
+
 	public int getAccountNum() {
 		return accountNum;
 	}
-	public void setAccountNum(int accountNum) {
-		this.accountNum = accountNum;
-	}
+
 	public String getUsername() {
 		return username;
 	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
+
 	public String getPassword() {
 		return password;
 	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
+
+
+
 	public void depositMoney(double d) {
-		// TODO Auto-generated method stub
-		
+		if (uservalidate.validateUser(getUsername(), getPassword())
+				&& accountValidate.validateAccount(getAccountNum())) {
+			funds.makeDeposit(d);
+			
+		}
 	}
+
 	public void withdrawMoney(double d) {
-		// TODO Auto-generated method stub
-		
+		if (uservalidate.validateUser(getUsername(), getPassword())
+				&& accountValidate.validateAccount(getAccountNum())) {
+			funds.withdrawCash(d);
+		}
 	}
+
 	public void checkBalance() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Current Balance is: " + funds.getAmount());
 	}
 
 }
