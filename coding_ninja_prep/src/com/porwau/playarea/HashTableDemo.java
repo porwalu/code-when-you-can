@@ -4,12 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 class HashT {
+	private StoredEmployee[] hashtable;
 
 	public HashT() {
 		hashtable = new StoredEmployee[6];
 	}
 
-	private StoredEmployee[] hashtable;
 
 	public boolean containsKey() {
 		return true;
@@ -128,6 +128,7 @@ public class HashTableDemo {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Map<Integer, Integer> map = new HashMap<>();
+	
 		// map.remove(key)
 		HashT empHash = new HashT();
 
@@ -136,7 +137,6 @@ public class HashTableDemo {
 		empHash.put("singh", new Emp(1, "sachin", "singh"));
 		empHash.put("rawat", new Emp(1, "ashu", "rawat"));
 		empHash.put("baroni", new Emp(1, "lily", "baroni"));
-
 		System.out.println(empHash.get("rawat1"));
 		empHash.printHashTable();
 		System.out.println(empHash.containsKey("singh"));

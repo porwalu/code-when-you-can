@@ -1,7 +1,16 @@
 package com.porwau.playarea;
 
+import java.util.LinkedList;
+import java.util.Stack;
+
 class StacksWithList {
 	private int tos = 0;
+	private LinkedList<Emp> list;
+	public StacksWithList() {
+		super();
+	}
+
+
 
 	Emp pop() {
 		return null;
@@ -89,6 +98,9 @@ public class StacksDemo {
 //		System.out.println(swa.pop());
 		System.out.println(swa.peek());
 		System.out.println(swa.peek());
+		
+		Stack<Integer> s = new Stack<>();
+	//	s.peek()
 
 	}
 }

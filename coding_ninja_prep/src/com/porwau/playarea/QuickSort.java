@@ -6,8 +6,6 @@ public class QuickSort {
 
 	public static void main(String[] args) {
 		int[] nums = new int[] {1, 10, 2, 5, 19, 21, 3, 57 };
-		//int[] nums = { 3, 1, 2, 4 };
-
 		System.out.println("Sorted array using quick sort is " + Arrays.toString(quickSort(nums, 0, nums.length - 1)));
 	}
 

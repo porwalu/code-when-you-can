@@ -51,8 +51,8 @@ public class ExecutorFrameworkDemo {
 //		executorA.execute(new Task2());
 //		}
 		ScheduledExecutorService executorB = Executors.newScheduledThreadPool(cpuCores);
-//		executorB.schedule(new Task2(), 5, SECONDS);//Calls after 5 seconds.
-//		executorB.scheduleAtFixedRate(new Task2(), 5, 2, SECONDS);
+		//executorB.schedule(new Task2(), 5, SECONDS);//Calls after 5 seconds.
+	//	executorB.scheduleAtFixedRate(new Task2(), 5, 2, SECONDS);
 //		executorB.scheduleWithFixedDelay(new Task2(), 5, 2, SECONDS);
 		System.out.println("Thread name in main is " + Thread.currentThread().getName());
 		
@@ -60,6 +60,7 @@ public class ExecutorFrameworkDemo {
 		List<Future<Integer>> listF = new ArrayList<>();
 		for(int i = 0; i < 5; i++) {
 			Future<Integer> future = serviceC.submit(new Task3());
+			//serviceC.submit(new Task2());
 			listF.add(future);
 		}
 		int i = 1;

@@ -46,6 +46,15 @@ class LRUCache extends LinkedHashMap<Integer, Integer> {
 	protected boolean removeEldestEntry(Map.Entry<Integer, Integer> eldest) {
 		return size() > capacity;
 	}
+	
+	public int get(int key) {
+		return super.get(key)==null? -1 : super.get(key);
+		
+	}
+	
+	public void put(int key,int value) {
+		super.put(key, value);		
+	}
 }
 
 class LRUCache2 {

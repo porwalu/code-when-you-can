@@ -73,6 +73,7 @@ class QueueUsingArray {
 	public Emp peek() {// returns front element without removing
 		if (size() == 0) {
 			throw new NoSuchElementException();
+		
 		}
 		return queue[front];
 	}
@@ -109,10 +110,12 @@ public class QDemo {
 
 	public static void main(String[] args) {
 		Deque<Integer> lst1 = new LinkedList<>();
+
 		
 		
 		Stack<Integer> stck = new Stack<Integer>();
 		Deque<Integer> que = new ArrayDeque<>();
+	
 		que.addLast(1);
 		que.addLast(5);
 		System.out.println(que.peekFirst());

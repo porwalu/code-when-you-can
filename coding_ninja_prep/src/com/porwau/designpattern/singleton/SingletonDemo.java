@@ -53,6 +53,10 @@ public class SingletonDemo {
 
 		// Student s = new Student();// - this is not allowed in singleton.
 		System.out.println(Boolean.valueOf("true ".trim()));
+		StringBuilder sb = new StringBuilder("N");
+	sb.append("s");
+	sb.replace(0, sb.length(), "HI");
+	System.out.println(sb);
 	}
 
 }

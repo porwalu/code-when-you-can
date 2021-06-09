@@ -75,7 +75,7 @@ class Employee {
 class Node<T> {
 
 	private T data;
-	private Node next;
+	private Node<T> next;
 
 	public T getData() {
 		return data;
@@ -85,7 +85,7 @@ class Node<T> {
 		this.data = data;
 	}
 
-	public Node getNext() {
+	public Node<T> getNext() {
 		return next;
 	}
 
@@ -117,7 +117,7 @@ class LL<T> {
 
 	public void add(T data) {
 
-		Node newNode = new Node(data);
+		Node newNode = new Node<>(data);
 		if (size == 0) {
 			head = newNode;
 			size++;
@@ -183,12 +183,12 @@ class LL<T> {
 			return null;
 		}
 		System.out.println("Removing First Entry...");
-		Node delNode = head;
+		Node<T> delNode = head;
 		Node tempNode = head.getNext();
 		head.setNext(null);
 		head = tempNode;
 		size--;
-		return (T) delNode.getData();
+		return  delNode.getData();
 
 	}
 
@@ -241,6 +241,23 @@ class LL<T> {
  		return null;
 	}
 
+	public void reverse() {
+		// TODO Auto-generated method stub
+		System.out.println("Reverse");
+		Node<T> currNode = head;
+		Node<T> prevNode = null;
+		Node<T> nextNode ;
+
+		while(currNode !=null) {
+			nextNode = currNode.getNext();
+			currNode.setNext(prevNode);
+			prevNode = currNode;
+			currNode=nextNode;
+		}
+		head=prevNode;
+		
+	}
+
 }
 
 public class LLTester {
@@ -254,7 +271,9 @@ public class LLTester {
 
 		ll1.add(e1);
 		ll1.traverse();
-		ll1.add(0, e1);
+		
+//		ll1.reverse();
+		//ll1.add(0, e1);
 		// ll1.add(0,new Employee("papa", "p", 71));
 		ll1.traverse();
 //		ll1.remove(20);
@@ -270,6 +289,8 @@ public class LLTester {
 //		System.out.println(ll2.remove());
 		LinkedList<Employee> llist = new LinkedList();
 		llist.add(e1);
+		
+		
 		
 	}
 
