@@ -35,8 +35,15 @@ class DB{
 
 public class SingletonTester {
 
+	public void greet() {
+		System.out.println("Hello WOrld!!");
+		
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		SingletonTester st = new SingletonTester();
+		
+		st.greet();
 
 	}
 
