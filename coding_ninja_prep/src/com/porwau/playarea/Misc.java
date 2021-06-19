@@ -12,7 +12,17 @@ private static int numIsland = 0;
 		char[][] island = { { '1', '1', '0', '0', '0' }, { '1', '1', '0', '0', '0' }, { '0', '0', '1', '0', '0' },
 				{ '0', '0', '0', '1', '1' } };
 		
+		int[][]dd = {{2,3},{1,2},{10,5},{9,2}};
+		dd[0] = new int[]{1,2};
+		int[][]cc = null;
+		
 		System.out.println(Arrays.toString(island[0]));
+		
+		System.out.println(Arrays.toString(dd[0]));
+		//Arrays.sort(dd, (a,b)->Integer.compare(a[0], b[0]));;
+		Arrays.sort(dd, (a,b)->a[0]-b[0]);
+		System.out.println(Arrays.toString(dd[0]));
+		System.arraycopy(island, 0, island, 0, island.length - 1);
 		
 		int rows = island.length;
 		int columns = island[0].length;

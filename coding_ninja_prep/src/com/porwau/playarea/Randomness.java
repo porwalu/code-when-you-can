@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Deque;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Stack;
@@ -154,6 +155,13 @@ public class Randomness {
 
 		System.out.println("SIze is " + arr.length);
 		java.util.LinkedList<Integer> jll= new java.util.LinkedList<Integer>();
+		
+		jll.add(10);
+		jll.add(20);
+        LinkedList<Integer> list  = new LinkedList<>();
+//		list.getLast();
+System.out.println("29".compareTo("27"));
+		Integer[] array = jll.toArray(new Integer[2]);
 		Emp e1 = new Emp(1,"Utkarsh","Porwal");
 		Emp e2 = new Emp(2,"Vasu","Porwal");
 		Emp e3 = new Emp(2,"Ashu","Porwal");
