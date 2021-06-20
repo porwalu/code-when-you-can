@@ -2,12 +2,15 @@ package com.porwau.lcode.locked;
 
 import java.util.Arrays;
 
+import com.porwau.playarea.Heap;
+//252 Meeting Rooms
 public class MeetingRooms {
 
 	public static void main(String[] args) {
 		int[] a = {1,2,3};
 		int[][]intervals = {{0,3},{5,10},{15,20}};
 		System.out.println(canAttendMeetings(intervals));
+		
 	}
 	
 	
