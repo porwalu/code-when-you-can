@@ -4,10 +4,13 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Deque;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Map;
+import java.util.Random;
 import java.util.Stack;
 
 class DoubleLinkedList{
@@ -158,7 +161,14 @@ public class Randomness {
 		
 		jll.add(10);
 		jll.add(20);
-        LinkedList<Integer> list  = new LinkedList<>();
+        List<Integer> list  = new LinkedList<>();
+        list.add(1);
+      Map<Integer,Integer> map = new HashMap<>();
+      List<Integer> list1  = new ArrayList<>();
+      list1.remove(prevValue);
+Random rand = new Random();
+
+  //    map.remove
 //		list.getLast();
 System.out.println("29".compareTo("27"));
 		Integer[] array = jll.toArray(new Integer[2]);
@@ -215,6 +225,8 @@ System.out.println("29".compareTo("27"));
 			fact = fact*i;
 		}
 		System.out.println("factorial of " + n + " is " + fact);
+        System.out.println((int)(Math.random()*10));
+
 	}
 	
 }
