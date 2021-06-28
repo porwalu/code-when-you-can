@@ -81,12 +81,13 @@ public class LambdaDemo {
 		Thread myLambdaThread = new Thread(() -> System.out.println("using lambda inside Runnable"));
 		Thread myLambdaThread1 = new Thread(LambdaDemo::test);
 
-		myLambdaThread.start();
-		myLambdaThread1.start();
+	//	myLambdaThread.start();
+		//myLambdaThread1.start();
 		// myGreeting.greet();
 		// lambdaGreeting.greet();
 		// throw new ArithmeticException();
-		
+		System.out.println("Stream foreach");
+		pList.stream().forEach(p->System.out.println(p.getFirstName()));
 		pList.stream().filter(p->p.getFirstName().contains("Utk")).forEach(System.out::println);
 
 	}
