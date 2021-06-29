@@ -135,7 +135,7 @@ public class BTree {
 	
 	void inOrderTraversal() {
 		if(root == null) {
-			System.out.println("Tree is empyty");
+			System.out.println("Tree is empty");
 			return;
 		}
 		inOrderRec(root);
