@@ -2,6 +2,8 @@ package com.porwau.designpatterns;
 import java.util.ArrayList;
 import java.util.List;
 
+import sun.awt.SubRegionShowable;
+
 class Channel{
 	private String title;
 	List<Subscriber> subs = new ArrayList<>();
@@ -25,9 +27,12 @@ class Channel{
 		
 	}
 	void notifyAllSubs() {
-		for(Subscriber sub: subs) {
-			sub.notifySub();
-		}
+		
+		subs.forEach(p->p.notifyAll());
+	//	subs.forEach(Subscriber::notifyAll);
+//		for(Subscriber sub: subs) {
+//			sub.notifySub();
+//		}
 	}
 }
 

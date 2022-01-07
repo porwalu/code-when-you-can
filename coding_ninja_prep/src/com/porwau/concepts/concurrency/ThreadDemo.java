@@ -16,9 +16,11 @@ public class ThreadDemo {
 
 		t.setName("Hello");
 		t.start();// run method is called first.
+		//t.start();// run method is called first.
+
 		//Thread.sleep(3000);
-		System.out.println("Main thread is " + Thread.currentThread().getName());
-		System.out.println("Inside Main");
+//		System.out.println("Main thread is " + Thread.currentThread().getName());
+//		System.out.println("Inside Main");
 
 	}
 
@@ -29,12 +31,12 @@ class Task implements Runnable {
 	@Override
 	public void run() {
 		System.out.println("Inside run");
-		System.out.println("Sub thread - " + Thread.currentThread().getName());
-		Thread.currentThread().setName("Hi");
-		System.out.println("Sub thread - " + Thread.currentThread().getName());
-
-		work();
-		workMore();
+//		System.out.println("Sub thread - " + Thread.currentThread().getName());
+//		Thread.currentThread().setName("Hi");
+//		System.out.println("Sub thread - " + Thread.currentThread().getName());
+//
+//		work();
+//		workMore();
 
 	}
 

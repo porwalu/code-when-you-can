@@ -6,7 +6,7 @@ public class MergeSort {
 
 	private static final int[] mergeSort(int[] nums) {
 		int[] mergeArray = new int[nums.length];
-		mergeSortRecursive(nums, mergeArray, 0, nums.length -1 );
+		mergeSortRecursive(nums, mergeArray, 0, nums.length - 1);
 		return mergeArray;
 	}
 
@@ -14,14 +14,12 @@ public class MergeSort {
 		if (start < end) {
 
 			int mid = (start + end) / 2;
-            System.out.println("Mid is " + mid);
+			System.out.println("Mid is " + mid);
 
 			mergeSortRecursive(nums, mergedArr, start, mid);
 			mergeSortRecursive(nums, mergedArr, mid + 1, end);
 			merge(nums, mergedArr, start, mid, end);
-
 		}
-
 	}
 
 	private static void merge(int[] nums, int[] mergedArray, int start, int mid, int end) {
@@ -57,20 +55,16 @@ public class MergeSort {
 				left++;
 				mergeCounter++;
 			}
-			//copy merged array to nums
-			for(int i = start; i <= end; i++) {
+			// copy merged array to nums
+			for (int i = start; i <= end; i++) {
 				nums[i] = mergedArray[i];
 			}
 		}
-
 	}
-
 	public static void main(String[] args) {
 		int[] nums = new int[] { 1, 10, 2, 5, 19, 21, 3, 7 };
 		int[] nums2 = { 3, 1, 2 };
 
 		System.out.println("Array using Merge Sort is : " + Arrays.toString(mergeSort(nums)));
-
 	}
-
 }

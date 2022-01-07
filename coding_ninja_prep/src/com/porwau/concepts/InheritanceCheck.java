@@ -10,9 +10,10 @@ class A{
 	}
 }
  class B extends A{
-		@Override
+//		@Override
 		protected
 		void changeThis(){
+		//	test();
 			System.out.println("Changethis of InheritanceCheck");
 
 		}
@@ -22,7 +23,7 @@ public class InheritanceCheck {
 	public static void main(String[] args) {
 		A a = new B();
 	 
-		a.test();//superclass methos will also call overriden method in subclass
+		a.changeThis();//superclass methos will also call overriden method in subclass
 
 	}
 

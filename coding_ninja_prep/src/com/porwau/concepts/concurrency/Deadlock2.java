@@ -18,11 +18,12 @@ public class Deadlock2 {
 						e.printStackTrace();
 					}
 					System.out.println("T1 waiting for lock2");
-				}
+				//}
 				
 				synchronized (lock2) {
 					System.out.println("T1 has lock1 and lock2");	
 				}
+			}
 			}
 		});
 
@@ -39,12 +40,13 @@ public class Deadlock2 {
 						e.printStackTrace();
 					}
 					System.out.println("T2 waiting for lock1");
-				}
+				//}
 				
-				synchronized (lock2) {
+				synchronized (lock1) {
 					System.out.println("T2 has lock1 and lock2");	
 				}
 			}
+		}
 		});
 
 		t1.start();

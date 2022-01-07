@@ -1,6 +1,7 @@
 package com.porwau.datastructures;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
@@ -8,7 +9,10 @@ import java.util.TreeMap;
 public class JDKHashMapDemo {
 
 	public static void main(String[] args) {
+		Map<Integer, Integer> map = new HashMap<>();
 
+		System.out.println(map.containsKey(1));
+		int[] nums = {1,2};
 		Map<Integer, String> treemap = new TreeMap<>();
 		treemap.put(10, "utkarsh");
 		treemap.put(5, "vasu");

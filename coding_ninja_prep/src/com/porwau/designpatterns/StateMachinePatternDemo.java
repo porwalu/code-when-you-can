@@ -198,7 +198,7 @@ class ATM {
 
 	public void insertCard() {
 		currState.insertCard();
-		setCurrState(hasCard);
+		//setCurrState(hasCard);
 	}
 
 	public void enterPin(int pin) {

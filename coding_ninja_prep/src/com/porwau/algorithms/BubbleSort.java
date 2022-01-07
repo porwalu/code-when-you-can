@@ -18,6 +18,7 @@ public class BubbleSort {
 		int[] intArr = { 78, 1, 12, 1, 23, 45, 23 };
 		bubbleSortDescending(intArr);
 		bubbleSortAscending(intArr);
+String s = "bew";
 
 	}
 

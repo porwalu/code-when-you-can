@@ -26,9 +26,9 @@ public class InterfaceChangesDemo implements Bar,Foo{
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Bar icd = new InterfaceChangesDemo();
+		InterfaceChangesDemo icd = new InterfaceChangesDemo();
 		icd.display();
-		//icd.show();
+		icd.show();
 		Foo.magic();
 		icd.barshow();
 
@@ -45,11 +45,11 @@ public class InterfaceChangesDemo implements Bar,Foo{
 		System.out.println("barshow of InterfaceChangesDemo");
 		
 	}
-
+//
 //	@Override
 //	public void show() {
 //		// TODO Auto-generated method stub
-//		//bar.super.show();
+//	Bar.super.show();
 //	}
 
 }

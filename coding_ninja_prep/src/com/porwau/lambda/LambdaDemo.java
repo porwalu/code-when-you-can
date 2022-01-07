@@ -2,6 +2,7 @@ package com.porwau.lambda;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 class Pers {
 
@@ -55,16 +56,19 @@ public class LambdaDemo {
 
 		List<Pers> pList = Arrays.asList(new Pers(22, "Utkarsh", "Porwal"),
 								new Pers(22, "Aru", "Porwal"));
-		
+		pList.forEach(p->System.out.println(p));
+	//	Optional<Pers> findFirst = pList.stream().findFirst().ofN;
+	//	findFirst.
 	//	pList.forEach(p->System.out.println(p));
 		
 	//	pList.forEach(System.out::println);
 		
 		
 		MyAdd addFunction = (int a, int b) -> a + b;
-
+		
 		Greeting myGreeting = new HelloWorldGreeting();
 		Greeting lambdaGreeting = () -> System.out.println("Hello World-1!!");
+		lambdaGreeting.greet();
 
 		// lambdas for runnable
 
@@ -80,6 +84,12 @@ public class LambdaDemo {
 
 		Thread myLambdaThread = new Thread(() -> System.out.println("using lambda inside Runnable"));
 		Thread myLambdaThread1 = new Thread(LambdaDemo::test);
+		
+		MyLambda ml = new MyLambda() {public void  print(){
+			System.out.println("hello from mylambda");
+			}};
+		//ml.print();
+	
 
 	//	myLambdaThread.start();
 		//myLambdaThread1.start();
@@ -99,6 +109,8 @@ public class LambdaDemo {
 	public static void test() {
 		System.out.println("test from task");
 	}
+	
+
 
 }
 

@@ -24,9 +24,9 @@ public class JoinDemo implements Runnable
         Thread t = new Thread(new JoinDemo());
         t.setName("subthread");
         t.start();
-        
+//        Thread.currentThread().join();
   
-        // This thread i.e. Main thread Waits for 1000ms this thread to die.
+        // This thread i.e. Main thread Waits for 1000ms for thread 't' to die.
         t.join(1000);
   
         System.out.println("\nJoining after 1000"+

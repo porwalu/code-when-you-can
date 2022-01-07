@@ -31,7 +31,11 @@ public class ExceptionDemo {
 //		
 		
 		System.out.println("Inside main");
-//		excepDemo();
+		try {
+			excepDemo();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+		}
 		System.out.println("Inside main again");
         String majorVersion = null;
         String[] splitVersion = null;
@@ -66,8 +70,14 @@ public class ExceptionDemo {
 
 	}
 
-	private static void excepDemo()  throws FileNotFoundException{
+	private static void excepDemo() throws FileNotFoundException  {
 		System.out.println("Inside excepDemo");		
+		
+		try {
+		throw new FileNotFoundException();
+		}finally {
+			System.out.println("Exiting excepDemo");
+		}
 		//try {
 		//	throw new OutOfMemoryError();
 //		}catch(FileNotFoundException fnfe) {

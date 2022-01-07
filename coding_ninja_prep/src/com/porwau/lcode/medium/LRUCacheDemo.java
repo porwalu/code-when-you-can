@@ -35,7 +35,7 @@ class LRUCache extends LinkedHashMap<Integer, Integer> {
 
 	LRUCache(int capacity) {
 		super(capacity, .75F, true);
-		this.capacity = capacity;
+		//this.capacity = capacity;
 	}
 
 	public int getCapacity() {
@@ -48,8 +48,7 @@ class LRUCache extends LinkedHashMap<Integer, Integer> {
 	}
 	
 	public int get(int key) {
-		return super.get(key)==null? -1 : super.get(key);
-		
+		return super.get(key)==null? -1 : super.get(key);		
 	}
 	
 	public void put(int key,int value) {
