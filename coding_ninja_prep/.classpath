@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/porwau/CR/AdvancedJava/externalJARS/ant.jar"/>
 	<classpathentry kind="lib" path="C:/porwau/CR/AdvancedJava/externalJARS/commons-collections-3.2.2.jar"/>
 	<classpathentry kind="lib" path="C:/porwau/CR/AdvancedJava/externalJARS/commons-collections4-4.1.jar"/>
 	<classpathentry kind="lib" path="C:/porwau/CR/AdvancedJava/externalJARS/commons-lang3-3.10.jar"/>
 	<classpathentry kind="lib" path="C:/porwau/CR/AdvancedJava/externalJARS/slf4j-api-1.5.8.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
