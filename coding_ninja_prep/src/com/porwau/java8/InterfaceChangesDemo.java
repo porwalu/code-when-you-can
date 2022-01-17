@@ -37,6 +37,7 @@ public class InterfaceChangesDemo implements Bar,Foo{
 	@Override
 	public void display() {
 		System.out.println("display() of InterfaceChangesDemo");
+		show();
 		
 	}
 

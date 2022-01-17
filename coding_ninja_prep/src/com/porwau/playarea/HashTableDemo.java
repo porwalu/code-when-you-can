@@ -22,6 +22,7 @@ class HashT {
 	public void put(String key, Emp emp) {
 		int index = hashKey(key);
 		// Emp tmp = hashtable[index];
+		
 		StoredEmployee st = new StoredEmployee(key, emp);
 		if (!occupied(index)) {
 			System.out.println("Can put at index " + index + " for key " + key);
